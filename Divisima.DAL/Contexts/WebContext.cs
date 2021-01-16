@@ -21,5 +21,7 @@ namespace Divisima.DAL.Entities.Contexts
 		public DbSet<Product> Product { get; set; }
 		public DbSet<Brand> Brand { get; set; }
 		public DbSet<ProductCategory> ProductCategory { get; set; }
+		public DbSet<Pages> Pages { get; set; }
+
 	}
 }

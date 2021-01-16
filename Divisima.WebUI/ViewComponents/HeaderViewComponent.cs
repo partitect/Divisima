@@ -11,11 +11,11 @@ namespace Divisima.WebUI.ViewComponents
 {
 	public class HeaderViewComponent:ViewComponent
 	{
-		WebRepository<Category> categoryRepo;
+		WebRepository<Pages> pagesRepo;
 
-		public HeaderViewComponent(WebRepository<Category> _categoryRepo)
+		public HeaderViewComponent(WebRepository<Pages> _pagesRepo)
 		{
-			categoryRepo = _categoryRepo;
+			pagesRepo = _pagesRepo;
 			
 
 		}
@@ -24,8 +24,8 @@ namespace Divisima.WebUI.ViewComponents
 		{
 			HeaderVM homeVM = new HeaderVM
 			{
-				
-				Categories = categoryRepo.GetAll().ToList(),
+
+				Pageies = pagesRepo.GetAll().ToList(),
 
 			};
 			return View(homeVM);

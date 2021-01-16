@@ -16,18 +16,19 @@ namespace Divisima.WebUI.Controllers
 		WebRepository<Slide> slideRepo;
 		WebRepository<Product> productRepo;
 		WebRepository<Brand> brandRepo;
+		WebRepository<Pages> pagesRepo;
 
 
 
 
-		public HomeController(WebRepository<Category> _categoryRepo, WebRepository<Slide> _slideRepo, WebRepository<Product> _productRepo, WebRepository<Brand> _brandRepo)
+
+		public HomeController(WebRepository<Category> _categoryRepo, WebRepository<Slide> _slideRepo, WebRepository<Product> _productRepo, WebRepository<Brand> _brandRepo, WebRepository<Pages> _pagesRepo)
 		{
 			categoryRepo = _categoryRepo;
 			slideRepo = _slideRepo;
 			productRepo = _productRepo;
 			brandRepo = _brandRepo;
-
-
+			pagesRepo = _pagesRepo;
 
 		}
 		public IActionResult Index()
@@ -38,6 +39,8 @@ namespace Divisima.WebUI.Controllers
 				Products = productRepo.GetAll().Include(i=>i.ProductPictures).OrderBy(o => o.DisplayIndex).Take(6).ToList(),
 				BestSellerProducts = productRepo.GetAll().Include(i => i.ProductPictures).OrderBy(o => Guid.NewGuid()).Take(8).ToList(),
 				Brands = brandRepo.GetAll().Take(6).ToList(),
+				Pageies = pagesRepo.GetAll().Where(a=> a.Type == 3).Take(3).ToList(),
+
 				//Categories = categoryRepo.GetAll().ToList(),
 
 			};

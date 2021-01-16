@@ -14,7 +14,7 @@ namespace Divisima.DAL.Entities
         [StringLength(100),Column(TypeName ="Varchar(100)"),Required(ErrorMessage ="Ürün Adı Gerekli"),Display(Name ="Ürün Adı")]
         public string Name { get; set; }
 
-        [Display(Name = "Fiyatı")]
+        [Display(Name = "Fiyatı"), Column(TypeName = "decimal(18,2)")]
         public decimal Price { get; set; }
 
         [Display(Name = "Stok Miktarı")]

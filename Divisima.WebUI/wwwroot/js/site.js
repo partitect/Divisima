@@ -120,7 +120,7 @@ $(window).on('load', function() {
         dots: true,
         animateOut: 'fadeOut',
     	animateIn: 'fadeIn',
-        navText: ['<i class="flaticon-left-arrow-1"></i>', '<i class="flaticon-right-arrow-1"></i>'],
+        navText: ['<i class="flaticon-right-arrow-1"></i>', '<i class="flaticon-right-arrow-1"></i>'],
         smartSpeed: 1200,
         autoHeight: false,
         autoplay: true,

@@ -17,7 +17,7 @@
                     </div>
                     <div class="offer-card text-white">
                         <span>from</span>
-                        <h2>$@item.Price</h2>
+                        <h2>$@Convert.ToInt32(item.Price)</h2>
                         <p>SHOP NOW</p>
                     </div>
                 </div>
@@ -35,30 +35,18 @@
 <section class="features-section">
     <div class="container-fluid">
         <div class="row">
-            <div class="col-md-4 p-0 feature">
-                <div class="feature-inner">
-                    <div class="feature-icon">
-                        <img src="img/icons/1.png" alt="#">
+            @foreach (var item in Model.Pageies)
+            {
+                <div class="col-md-4 p-0 feature">
+                    <div class="feature-inner">
+                        <div class="feature-icon">
+                            <img src="@item.Icon" alt="#">
+                        </div>
+                        <h2>@item.Name</h2>
                     </div>
-                    <h2>Fast Secure Payments</h2>
                 </div>
-            </div>
-            <div class="col-md-4 p-0 feature">
-                <div class="feature-inner">
-                    <div class="feature-icon">
-                        <img src="img/icons/2.png" alt="#">
-                    </div>
-                    <h2>Premium Products</h2>
-                </div>
-            </div>
-            <div class="col-md-4 p-0 feature">
-                <div class="feature-inner">
-                    <div class="feature-icon">
-                        <img src="img/icons/3.png" alt="#">
-                    </div>
-                    <h2>Free & fast Delivery</h2>
-                </div>
-            </div>
+            }
+
         </div>
     </div>
 </section>
@@ -72,11 +60,11 @@
         <div class="product-slider owl-carousel">
             @foreach (var item in Model.Products)
             {
-                <latesttproducts items-id="@item.ID" items-name="@item.Name" items-price="@item.Price"  items-picture="@(item.ProductPictures.Any()?item.ProductPictures.FirstOrDefault().Path:"/img/nopicture.jpg")"></latesttproducts>
+                <latesttproducts items-id="@item.ID" items-name="@item.Name" items-price="@item.Price" items-picture="@(item.ProductPictures.Any()?item.ProductPictures.FirstOrDefault().Path:"/img/nopicture.jpg")"></latesttproducts>
 
             }
         </div>
-        
+
     </div>
 </section>
 <!-- letest product section end -->
@@ -101,9 +89,9 @@
 
             @foreach (var item in Model.BestSellerProducts)
             {
-            <div class="col-lg-3 col-sm-6">
-                <latesttproducts items-id="@item.ID" items-name="@item.Name" items-price="@item.Price" items-picture="@(item.ProductPictures.Any()?item.ProductPictures.FirstOrDefault().Path:"/img/nopicture.jpg")"></latesttproducts>
-            </div>
+                <div class="col-lg-3 col-sm-6">
+                    <latesttproducts items-id="@item.ID" items-name="@item.Name" items-price="@item.Price" items-picture="@(item.ProductPictures.Any()?item.ProductPictures.FirstOrDefault().Path:"/img/nopicture.jpg")"></latesttproducts>
+                </div>
             }
 
 
@@ -129,6 +117,6 @@
 <!-- Banner section end  -->
 @section customScript{
     <script>
-                    //alert("asd")
+                        //alert("asd")
     </script>
 }

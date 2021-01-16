@@ -9,7 +9,7 @@ namespace Divisima.WebUI.ViewModels
 	public class HeaderVM
 	{
 	
-		public List<Category> Categories { get; set; }
+		public List<Pages> Pageies { get; set; }
 		
 	}
 }

@@ -14,13 +14,13 @@ namespace Divisima.DAL.Entities
         [StringLength(100),Column(TypeName = "varchar(100)"),Display(Name ="Slayt Başlığı")]
         public string Title { get; set; }
 
-        [StringLength(250), Column(TypeName = "varchar(250)"), Display(Name = "Slayt Açıklaması")]
+        [StringLength(500), Column(TypeName = "varchar(500)"), Display(Name = "Slayt Açıklaması")]
         public string Description { get; set; }
 
         [StringLength(150), Column(TypeName = "varchar(150)"), Display(Name = "Slayt Resim Dosyası")]
         public string Image { get; set; }
 
-        [Display(Name = "Fiyat Bilgisi")]
+        [Display(Name = "Fiyat Bilgisi"), Column(TypeName = "decimal(18,2)")]
         public decimal Price { get; set; }
 
         [StringLength(150), Column(TypeName = "varchar(150)"), Display(Name = "Slayt Linki")]
