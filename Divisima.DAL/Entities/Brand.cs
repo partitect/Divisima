@@ -6,14 +6,14 @@ using System.Text;
 
 namespace Divisima.DAL.Entities
 {
-    [Table("Category")]
-    public class Category
+    [Table("Brand")]
+    public class Brand
     {
         public int ID { get; set; }
 
-        [StringLength(30),Column(TypeName = "varchar(30)"),Required(ErrorMessage ="Kategori adı boş geçilemez"),Display(Name ="Kategori Adı")]
+        [StringLength(30),Column(TypeName = "varchar(30)"),Required(ErrorMessage ="Marka adı boş geçilemez"),Display(Name = "Marka Adı")]
         public string Name { get; set; }
 
-        public ICollection<ProductCategory> ProductCategories { get; set; }
+        public ICollection<Product> Products { get; set; }
     }
 }
