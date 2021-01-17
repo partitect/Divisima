@@ -17,18 +17,24 @@ namespace Divisima.WebUI.Controllers
 		WebRepository<Product> productRepo;
 		WebRepository<Brand> brandRepo;
 		WebRepository<Pages> pagesRepo;
+		WebRepository<City> cityRepo;
+		WebRepository<District> districtRepo;
 
 
 
 
 
-		public HomeController(WebRepository<Category> _categoryRepo, WebRepository<Slide> _slideRepo, WebRepository<Product> _productRepo, WebRepository<Brand> _brandRepo, WebRepository<Pages> _pagesRepo)
+
+
+		public HomeController(WebRepository<Category> _categoryRepo, WebRepository<Slide> _slideRepo, WebRepository<Product> _productRepo, WebRepository<Brand> _brandRepo, WebRepository<Pages> _pagesRepo, WebRepository<City> _cityRepo, WebRepository<District> _districRepo)
 		{
 			categoryRepo = _categoryRepo;
 			slideRepo = _slideRepo;
 			productRepo = _productRepo;
 			brandRepo = _brandRepo;
 			pagesRepo = _pagesRepo;
+			cityRepo = _cityRepo;
+			districtRepo = _districRepo;
 
 		}
 		public IActionResult Index()
@@ -45,6 +51,18 @@ namespace Divisima.WebUI.Controllers
 
 			};
 			return View(homeVM);
+		}
+
+		[Route("/sehirler")]
+		public IActionResult getCities()
+		{
+			return Json(cityRepo.GetAll());
+		}
+
+		[Route("/ilceler")]
+		public IActionResult getDistrict(int cityId)
+		{
+			return Json(districtRepo.GetAll(g=> g.CityID == cityId));
 		}
 	}
 }

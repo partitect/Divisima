@@ -31,4 +31,11 @@
     <ProjectReference Include="..\Divisima.DAL\Divisima.DAL.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Areas\Admin\ViewModels\" />
+    <Folder Include="Areas\Admin\wwwroot\css\" />
+    <Folder Include="Areas\Admin\wwwroot\js\" />
+    <Folder Include="Areas\Admin\wwwroot\scss\" />
+  </ItemGroup>
+
 </Project>

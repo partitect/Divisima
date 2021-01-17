@@ -1,0 +1,22 @@
+﻿@model IEnumerable<Product>
+@{
+    string customColumn = Model.Count() == 8 ? "col-lg-3 col-sm-6" : "";
+}
+@foreach (Product p in Model)
+{
+    <div class="@customColumn">
+        <div class="product-item">
+            <div class="pi-pic">
+                <img src="@(p.ProductPictures.Count != 0 ? p.ProductPictures.FirstOrDefault().Path : "/img/nopicture.jpg")" alt="@p.Name">
+                <div class="pi-links">
+                    <a asp-controller="Product" asp-action="Detail" asp-route-name="@GeneralTool.KarakterDuzelt(p.Name)" asp-route-id="@p.ID" class="add-card"><i class="flaticon-bag"></i><span>SATIN AL</span></a>
+                    <a href="#" class="wishlist-btn"><i class="flaticon-heart"></i></a>
+                </div>
+            </div>
+            <div class="pi-text">
+                <h6>@p.Price TL</h6>
+                <p>@p.Name</p>
+            </div>
+        </div>
+    </div>
+}

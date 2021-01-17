@@ -1,30 +1,29 @@
 ﻿@model HomeVM
-<!-- Hero section -->
+@{
+    //ViewData["customColumn"] = "col-lg-3 col-sm-6";
+}
 <section class="hero-section">
     <div class="hero-slider owl-carousel">
-        @foreach (var item in Model.Slides)
+        @foreach (Slide s in Model.Slides)
         {
-            <div class="hs-item set-bg" data-setbg="@item.Image">
+            <div class="hs-item set-bg" data-setbg="@s.Image">
                 <div class="container">
                     <div class="row">
                         <div class="col-xl-6 col-lg-7 text-white">
-                            <span>New Arrivals</span>
-                            <h2>@item.Title</h2>
-                            <p>@item.Description</p>
-                            <a href="@item.Link" class="site-btn sb-line">DISCOVER</a>
-                            <a href="@item.Link" class="site-btn sb-white">ADD TO CART</a>
+                            <h2>@s.Title</h2>
+                            <p>@s.Description</p>
+                            <a href="@s.Link" class="site-btn sb-line">DETAYLI BİLGİ</a>
+                            <a href="@s.Link" class="site-btn sb-white">SEPETE EKLE</a>
                         </div>
                     </div>
                     <div class="offer-card text-white">
-                        <span>from</span>
-                        <h2>$@Convert.ToInt32(item.Price)</h2>
-                        <p>SHOP NOW</p>
+                        <span>Kampanya</span>
+                        <h2 style="font-size:20px">@s.Price TL</h2>
+                        <p>SATIN AL</p>
                     </div>
                 </div>
             </div>
         }
-
-
     </div>
     <div class="container">
         <div class="slide-num-holder" id="snh-1"></div>
@@ -35,18 +34,30 @@
 <section class="features-section">
     <div class="container-fluid">
         <div class="row">
-            @foreach (var item in Model.Pageies)
-            {
-                <div class="col-md-4 p-0 feature">
-                    <div class="feature-inner">
-                        <div class="feature-icon">
-                            <img src="@item.Icon" alt="#">
-                        </div>
-                        <h2>@item.Name</h2>
+            <div class="col-md-4 p-0 feature">
+                <div class="feature-inner">
+                    <div class="feature-icon">
+                        <img src="img/icons/1.png" alt="#">
                     </div>
+                    <h2>Fast Secure Payments</h2>
                 </div>
-            }
-
+            </div>
+            <div class="col-md-4 p-0 feature">
+                <div class="feature-inner">
+                    <div class="feature-icon">
+                        <img src="img/icons/2.png" alt="#">
+                    </div>
+                    <h2>Premium Products</h2>
+                </div>
+            </div>
+            <div class="col-md-4 p-0 feature">
+                <div class="feature-inner">
+                    <div class="feature-icon">
+                        <img src="img/icons/3.png" alt="#">
+                    </div>
+                    <h2>Free & fast Delivery</h2>
+                </div>
+            </div>
         </div>
     </div>
 </section>
@@ -55,16 +66,11 @@
 <section class="top-letest-product-section">
     <div class="container">
         <div class="section-title">
-            <h2>LATEST PRODUCTS</h2>
+            <h2>EN YENİ ÜRÜNLER</h2>
         </div>
         <div class="product-slider owl-carousel">
-            @foreach (var item in Model.Products)
-            {
-                <latesttproducts items-id="@item.ID" items-name="@item.Name" items-price="@item.Price" items-picture="@(item.ProductPictures.Any()?item.ProductPictures.FirstOrDefault().Path:"/img/nopicture.jpg")"></latesttproducts>
-
-            }
+            <partial name="_Product" model="Model.Products" />
         </div>
-
     </div>
 </section>
 <!-- letest product section end -->
@@ -72,34 +78,14 @@
 <section class="product-filter-section">
     <div class="container">
         <div class="section-title">
-            <h2>BROWSE TOP SELLING PRODUCTS</h2>
+            <h2>EN ÇOK SATILAN ÜRÜNLER</h2>
         </div>
-        <ul class="product-filter-menu">
-
-            <li><a href="#">TOPS</a></li>
-            <li><a href="#">JUMPSUITS</a></li>
-            <li><a href="#">LINGERIE</a></li>
-            <li><a href="#">JEANS</a></li>
-            <li><a href="#">DRESSES</a></li>
-            <li><a href="#">COATS</a></li>
-            <li><a href="#">JUMPERS</a></li>
-            <li><a href="#">LEGGINGS</a></li>
-        </ul>
         <div class="row">
 
-            @foreach (var item in Model.BestSellerProducts)
-            {
-                <div class="col-lg-3 col-sm-6">
-                    <latesttproducts items-id="@item.ID" items-name="@item.Name" items-price="@item.Price" items-picture="@(item.ProductPictures.Any()?item.ProductPictures.FirstOrDefault().Path:"/img/nopicture.jpg")"></latesttproducts>
-                </div>
-            }
-
-
+            <partial name="_Product" model="Model.BestSellerProducts" />
 
         </div>
-        <div class="text-center pt-5">
-            <button class="site-btn sb-line sb-dark">LOAD MORE</button>
-        </div>
+
     </div>
 </section>
 <!-- Product filter section end -->
@@ -116,7 +102,12 @@
 </section>
 <!-- Banner section end  -->
 @section customScript{
+    <script src="/js/jquery.slicknav.min.js"></script>
     <script>
-                        //alert("asd")
+        $('.main-menu').slicknav({
+            prependTo: '.main-navbar .container',
+            closedSymbol: '<i class="flaticon-right-arrow"></i>',
+            openedSymbol: '<i class="flaticon-down-arrow"></i>'
+        });
     </script>
 }

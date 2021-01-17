@@ -22,6 +22,9 @@ namespace Divisima.DAL.Entities.Contexts
 		public DbSet<Brand> Brand { get; set; }
 		public DbSet<ProductCategory> ProductCategory { get; set; }
 		public DbSet<Pages> Pages { get; set; }
+		public DbSet<GeneralInfo> GeneralInfos { get; set; }
+		public DbSet<City> City { get; set; }
+		public DbSet<District> District { get; set; }
 
 	}
 }

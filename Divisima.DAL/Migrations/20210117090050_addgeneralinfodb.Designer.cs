@@ -4,14 +4,16 @@ using Divisima.DAL.Entities.Contexts;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Divisima.DAL.Migrations
 {
     [DbContext(typeof(WebContext))]
-    partial class WebContextModelSnapshot : ModelSnapshot
+    [Migration("20210117090050_addgeneralinfodb")]
+    partial class addgeneralinfodb
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -51,45 +53,6 @@ namespace Divisima.DAL.Migrations
                     b.HasKey("ID");
 
                     b.ToTable("Category");
-                });
-
-            modelBuilder.Entity("Divisima.DAL.Entities.City", b =>
-                {
-                    b.Property<int>("ID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .UseIdentityColumn();
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("Varchar(50)");
-
-                    b.HasKey("ID");
-
-                    b.ToTable("City");
-                });
-
-            modelBuilder.Entity("Divisima.DAL.Entities.District", b =>
-                {
-                    b.Property<int>("ID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .UseIdentityColumn();
-
-                    b.Property<int>("CityID")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("Varchar(50)");
-
-                    b.HasKey("ID");
-
-                    b.HasIndex("CityID");
-
-                    b.ToTable("District");
                 });
 
             modelBuilder.Entity("Divisima.DAL.Entities.GeneralInfo", b =>
@@ -269,17 +232,6 @@ namespace Divisima.DAL.Migrations
                     b.ToTable("Slide");
                 });
 
-            modelBuilder.Entity("Divisima.DAL.Entities.District", b =>
-                {
-                    b.HasOne("Divisima.DAL.Entities.City", "City")
-                        .WithMany("Districts")
-                        .HasForeignKey("CityID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("City");
-                });
-
             modelBuilder.Entity("Divisima.DAL.Entities.Product", b =>
                 {
                     b.HasOne("Divisima.DAL.Entities.Brand", "Brand")
@@ -328,11 +280,6 @@ namespace Divisima.DAL.Migrations
             modelBuilder.Entity("Divisima.DAL.Entities.Category", b =>
                 {
                     b.Navigation("ProductCategories");
-                });
-
-            modelBuilder.Entity("Divisima.DAL.Entities.City", b =>
-                {
-                    b.Navigation("Districts");
                 });
 
             modelBuilder.Entity("Divisima.DAL.Entities.Product", b =>
