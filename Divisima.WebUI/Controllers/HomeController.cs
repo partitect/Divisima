@@ -20,12 +20,6 @@ namespace Divisima.WebUI.Controllers
 		WebRepository<City> cityRepo;
 		WebRepository<District> districtRepo;
 
-
-
-
-
-
-
 		public HomeController(WebRepository<Category> _categoryRepo, WebRepository<Slide> _slideRepo, WebRepository<Product> _productRepo, WebRepository<Brand> _brandRepo, WebRepository<Pages> _pagesRepo, WebRepository<City> _cityRepo, WebRepository<District> _districRepo)
 		{
 			categoryRepo = _categoryRepo;

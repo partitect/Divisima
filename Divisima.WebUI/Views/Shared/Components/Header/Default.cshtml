@@ -38,12 +38,13 @@
         <div class="container">
             <!-- menu -->
             <ul class="main-menu">
-                @foreach (var item in Model.Pageies)
+                <li> <a href="/">Home</a></li>
+                @foreach (var item in Model.HeaderPages)
                 {
                     @if (item.Type == 0)
                     {
                         <li>
-                            <a href="index.html">
+                            <a asp-controller="Category" asp-action="Index" asp-route-name="@GeneralTool.KarakterDuzelt(item.Name.ToLower())" asp-route-id="@item.ID">
                                 @item.Name
                                 @if (item.Status != null)
                                 {
@@ -54,7 +55,7 @@
                     }
                     else if (item.Type == 1)
                     {
-                        var parentList = Model.Pageies.Where(parent => Model.Pageies.Any(a => item.ID == parent.ParentId)).ToList();
+                        var parentList = Model.HeaderPages.Where(parent => Model.HeaderPages.Any(a => item.ID == parent.ParentId)).ToList();
                         <li>
                             <a href="#">
                                 @item.Name
@@ -66,7 +67,7 @@
                             <ul class="sub-menu">
                                 @foreach (var altItem in parentList)
                                 {
-                                    <li><a href="category.html">@altItem.Name</a></li>
+                                    <li><a asp-controller="Category" asp-action="Index" asp-route-name="@GeneralTool.KarakterDuzelt(altItem.Name.ToLower())" asp-route-id="@altItem.ID">@altItem.Name</a></li>
                                 }
                             </ul>
                         </li>

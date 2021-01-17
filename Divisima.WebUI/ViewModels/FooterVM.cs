@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace Divisima.WebUI.ViewModels
 {
-	public class HeaderVM
+	public class FooterVM
 	{
 	
-		public List<Pages> HeaderPages { get; set; }
+		public List<Pages> FooterPages { get; set; }
 		
 	}
 }

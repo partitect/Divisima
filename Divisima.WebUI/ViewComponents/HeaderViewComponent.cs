@@ -25,7 +25,7 @@ namespace Divisima.WebUI.ViewComponents
 			HeaderVM homeVM = new HeaderVM
 			{
 
-				Pageies = pagesRepo.GetAll().ToList(),
+				HeaderPages = pagesRepo.GetAll().ToList(),
 
 			};
 			return View(homeVM);

@@ -17,6 +17,9 @@ namespace Divisima.DAL.Entities
         [StringLength(500), Column(TypeName = "varchar(500)"), Display(Name = "Sayfa Bağlantısı")]
         public string Link { get; set; }
 
+        [Column(TypeName = "text"), Display(Name = "Sayfa Açıklaması")]
+        public string Desc { get; set; }
+
         [StringLength(50), Column(TypeName = "varchar(50)"), Display(Name = "Link Icon")]
         public string Icon { get; set; }
 
