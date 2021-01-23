@@ -1,0 +1,106 @@
+{
+	"themes": [
+		{
+			"name": "Theme 1",
+			"color1": "#EA8C55",
+			"color2": "#C75146",
+			"color3": "#81171B"
+		},
+		{
+			"name": "Theme 2",
+			"color1": "#666EDD",
+			"color2": "#247BA0",
+			"color3": "#1b998b"
+		}
+	],
+	"maps": [
+		{
+			"name": "World",
+			"identy": "world"
+		},
+		{
+			"name": "Europa",
+			"identy": "europa"
+		},
+		{
+			"name": "Asia",
+			"identy": "asia"
+		},
+		{
+			"name": "Africa",
+			"identy": "africa"
+		},
+		{
+			"name": "China",
+			"identy": "china"
+		},
+		{
+			"name": "USA",
+			"identy": "usa"
+		},
+		{
+			"name": "Russia",
+			"identy": "russia"
+		},
+		{
+			"name": "Canada",
+			"identy": "canada"
+		},
+		{
+			"name": "Turkey",
+			"identy": "turkey"
+		},
+		{
+			"name": "France",
+			"identy": "france"
+		},
+		{
+			"name": "Germany",
+			"identy": "germany"
+		},
+		{
+			"name": "Australia",
+			"identy": "australia"
+		},
+		{
+			"name": "Belgium",
+			"identy": "belgium"
+		},
+		{
+			"name": "Holland",
+			"identy": "holland"
+		},
+		{
+			"name": "India",
+			"identy": "india"
+		},
+		{
+			"name": "Italy",
+			"identy": "italy"
+		},
+		{
+			"name": "Macedonia",
+			"identy": "macedonia"
+		},
+		{
+			"name": "Poland",
+			"identy": "poland"
+		},
+		{
+			"name": "Portugal",
+			"identy": "portugal"
+		},
+		{
+			"name": "Spain",
+			"identy": "spain"
+		},
+		{
+			"name": "Sweden",
+			"identy": "sweden"
+		},
+		{
+			"name": "Switzerland",
+			"identy": "switzerland"
+		}
+	]
+}

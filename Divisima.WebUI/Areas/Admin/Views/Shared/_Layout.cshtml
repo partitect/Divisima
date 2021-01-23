@@ -1,13 +1,414 @@
-﻿<!DOCTYPE html>
-
-<html>
+﻿@{
+    var username = User.Identity.Name;
+}
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <meta name="viewport" content="width=device-width" />
-    <title>@ViewBag.Title</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>HOME DASHBOARD - Andiamo Admin Template</title>
+
+    <meta name="description" content="Andiamo Fomantic-ui Based Admin Template" />
+    <meta name="author" content="Partitect" />
+    <meta name="classification" content="semantic,semantic-ui,fomantic-ui,admin,template,admin-template,TemplateMonster,css,pug,sass" />
+    <meta name="copyright" content="1 December 2020 partitect.info" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta property="og:url" content="https://andiamo.netlify.app/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Andiamo Admin Template" />
+    <meta property="og:description" content="Andiamo Fomantic-ui Based Admin Template" />
+    <meta property="og:image" content="../admin/img/logo.svg" />
+    <meta property="og:site_name" content="Andiamo Admin Template" />
+    <meta property="og:locale" content="en" />
+    <meta property="article:author" content="Andiamo Admin Template" />
+
+    <!-- Address Bar Color -->
+    <meta name="theme-color" content="#ffffff" />
+
+    <!-- Robots -->
+    <meta name="robots" content="noindex,nofollow" />
+    <meta name="googlebot" content="noindex,nofollow" />
+
+    <!-- Favicons -->
+    <link rel="shortcut icon" href="../admin/img/favicon/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="../admin/img/favicon/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="../admin/img/favicon/favicon.svg" />
+    <link rel="mask-icon" href="../admin/img/favicon/favicon.svg" color="#ffffff" />
+
+    <link rel="canonical" href="https://andiamo.netlify.app/" />
+    <link type="text/plain" rel="author" href="https://andiamo.netlify.app//humans.txt" />
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="../admin/vendors/fomantic-ui/dist/semantic.min.css" />
+    <link rel="stylesheet" href="../admin/vendors/waves/dist/waves.min.css" />
+    <link rel="stylesheet" href="../admin/vendors/prism/themes/prism-tomorrow.css" />
+    <link rel="stylesheet" href="../admin/vendors/prism/plugins/toolbar//prism-toolbar.css" />
+    <link id="AndiamoIconfont" rel="stylesheet" href="../admin/fonts/andiamo-icons/iconfont.css" />
+    <link id="TemplateIconfont" rel="stylesheet" href="../admin/fonts/iconfont/iconfont.css" />
+    <link rel="stylesheet" href="../admin/css/app.min.css" />
 </head>
 <body>
-    <div>
-        @RenderBody()
+    <div class="loader-segment">
+        <svg class="svg-logo" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" data-spm-anchor-id="a313x.7781069.0.i7" xmlns:xlink="http://www.w3.org/1999/xlink" width="200" height="200">
+            <defs>
+                <style type="text/css"></style>
+            </defs>
+            <path d="M398.904889 719.274667l-224.568889-224.540445a158.321778 158.321778 0 0 1 0-223.857778l224.568889-224.512a158.264889 158.264889 0 0 1 223.829333 0l224.568889 224.540445a158.264889 158.264889 0 0 1 0 223.829333l-224.568889 224.568889a158.264889 158.264889 0 0 1-223.829333 0"
+                  fill="#ff2882"
+                  data-spm-anchor-id="a313x.7781069.0.i1"></path>
+            <path class="selected"
+                  d="M398.904889 957.070222l-224.568889-224.568889a158.293333 158.293333 0 0 1 0-223.800889l224.568889-224.540444a158.264889 158.264889 0 0 1 223.829333 0l224.568889 224.540444a158.236444 158.236444 0 0 1 0 223.800889l-224.568889 224.568889a158.264889 158.264889 0 0 1-223.829333 0"
+                  fill="rgba(150, 60, 255, .8)"
+                  data-spm-anchor-id="a313x.7781069.0.i5"></path>
+            <path class="selected" d="M622.734222 719.303111l217.543111-217.6-217.543111-217.543111a158.264889 158.264889 0 0 0-223.829333 0l-217.6 217.571556 217.6 217.571555a158.264889 158.264889 0 0 0 223.857778 0" fill="rgba(150, 60, 255, .8)" data-spm-anchor-id="a313x.7781069.0.i0"></path>
+        </svg>
     </div>
+    <div id="rightSidebar">
+        <div class="ui right sidebar vertical push right-side-menu">
+            <div class="ui pointing secondary two item tabular menu calendar-tab-menu"><a class="item active" data-tab="first">Events</a><a class="item" data-tab="second">Support</a></div>
+            <div class="slimscrollRight">
+                <div class="ui tab active" data-tab="first">
+                    <div class="ui equal width stackable padded grid">
+                        <div class="row">
+                            <div class="column">
+                                <h6>Todos</h6>
+                                <div class="ui divider"></div>
+                                <svg viewBox="0 0 0 0" style="position: absolute; z-index: -1; opacity: 0;">
+                                    <defs>
+                                        <lineargradient id="boxGradient" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="25" y2="25">
+                                            <stop offset="0%" stop-color="#27FDC7"></stop>
+                                            <stop offset="100%" stop-color="#0FC0F5"></stop>
+                                        </lineargradient>
+                                        <lineargradient id="lineGradient">
+                                            <stop offset="0%" stop-color="#0FC0F5"></stop>
+                                            <stop offset="100%" stop-color="#27FDC7"></stop>
+                                        </lineargradient>
+                                        <path id="todo__line" stroke="url(#lineGradient)" d="M21 12.3h168v0.1z"></path>
+                                        <path id="todo__box" stroke="url(#boxGradient)" d="M21 12.7v5c0 1.3-1 2.3-2.3 2.3H8.3C7 20 6 19 6 17.7V7.3C6 6 7 5 8.3 5h10.4C20 5 21 6 21 7.3v5.4"></path>
+                                        <path id="todo__check" stroke="url(#boxGradient)" d="M10 13l2 2 5-5"></path>
+                                        <circle id="todo__circle" cx="13.5" cy="12.5" r="10"></circle>
+                                    </defs>
+                                </svg>
+                                <div class="todo-list">
+                                    <div class="todo">
+                                        <input class="todo__state" type="checkbox" />
+                                        <svg class="todo__icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 200 25">
+                                            <use class="todo__line" xlink:href="#todo__line"></use>
+                                            <use class="todo__box" xlink:href="#todo__box"></use>
+                                            <use class="todo__check" xlink:href="#todo__check"></use>
+                                            <use class="todo__circle" xlink:href="#todo__circle"></use>
+                                        </svg>
+                                        <div class="todo__text">Finish coneference slides</div>
+                                    </div>
+                                    <div class="todo">
+                                        <input class="todo__state" type="checkbox" />
+                                        <svg class="todo__icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 200 25">
+                                            <use class="todo__line" xlink:href="#todo__line"></use>
+                                            <use class="todo__box" xlink:href="#todo__box"></use>
+                                            <use class="todo__check" xlink:href="#todo__check"></use>
+                                            <use class="todo__circle" xlink:href="#todo__circle"></use>
+                                        </svg>
+                                        <div class="todo__text">Lament about the state</div>
+                                    </div>
+                                    <div class="todo">
+                                        <input class="todo__state" type="checkbox" />
+                                        <svg class="todo__icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 200 25">
+                                            <use class="todo__line" xlink:href="#todo__line"></use>
+                                            <use class="todo__box" xlink:href="#todo__box"></use>
+                                            <use class="todo__check" xlink:href="#todo__check"></use>
+                                            <use class="todo__circle" xlink:href="#todo__circle"></use>
+                                        </svg>
+                                        <div class="todo__text">Show Secret Demo</div>
+                                    </div>
+                                    <div class="todo">
+                                        <input class="todo__state" type="checkbox" />
+                                        <svg class="todo__icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 200 25">
+                                            <use class="todo__line" xlink:href="#todo__line"></use>
+                                            <use class="todo__box" xlink:href="#todo__box"></use>
+                                            <use class="todo__check" xlink:href="#todo__check"></use>
+                                            <use class="todo__circle" xlink:href="#todo__circle"></use>
+                                        </svg>
+                                        <div class="todo__text">Talk with conf attendees</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="column">
+                                <h6>Event List</h6>
+                                <div class="ui divider"></div>
+                                <div class="ui segment __event-list-segment __primary">
+                                    <img src="../admin/img/svg/super_man.svg" alt="andiamo-images" />
+                                    <p>Tim Howard cleared</p>
+                                </div>
+                                <div class="ui segment __event-list-segment __secondary">
+                                    <img src="../admin/img/svg/super_woman.svg" alt="andiamo-images" />
+                                    <p>Lenna Burton added now</p>
+                                </div>
+                                <div class="ui segment __event-list-segment __danger">
+                                    <img src="../admin/img/svg/undraw_woman_mevk.svg" alt="andiamo-images" />
+                                    <p>Sunny Swimwell awarded</p>
+                                </div>
+                                <div class="ui segment __event-list-segment __info">
+                                    <img src="../admin/img/svg/undraw_Notify_re_65on.svg" alt="andiamo-images" />
+                                    <p>Kate Linpsay add message</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="ui tab" data-tab="second">
+                    <div class="ui segment __account-card">
+                        <div class="text-wrapper">
+                            <div class="left">
+                                <h5>Manon Betts</h5>
+                                <p>Administrator</p>
+                            </div>
+                            <div class="right">
+                                <h4>347 mins</h4>
+                            </div>
+                        </div>
+                        <div class="graph-wrapper">
+                            <div class="left"><img src="../admin/img/avatar/48.png" alt="andiamo-images" /></div>
+                            <div class="right">
+                                <div class="andiamo-charts" id="account-chart-1" style="width:100%;height:100px"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ui segment __account-card">
+                        <div class="text-wrapper">
+                            <div class="left">
+                                <h5>Mallory Mccray</h5>
+                                <p>Supporter</p>
+                            </div>
+                            <div class="right">
+                                <h4>287 mins</h4>
+                            </div>
+                        </div>
+                        <div class="graph-wrapper">
+                            <div class="left"><img src="../admin/img/avatar/49.png" alt="andiamo-images" /></div>
+                            <div class="right">
+                                <div class="andiamo-charts" id="account-chart-2" style="width:100%;height:100px"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ui segment __account-card">
+                        <div class="text-wrapper">
+                            <div class="left">
+                                <h5>Alton Lynn</h5>
+                                <p>Co-Operator</p>
+                            </div>
+                            <div class="right">
+                                <h4>109 mins</h4>
+                            </div>
+                        </div>
+                        <div class="graph-wrapper">
+                            <div class="left"><img src="../admin/img/avatar/50.png" alt="andiamo-images" /></div>
+                            <div class="right">
+                                <div class="andiamo-charts" id="account-chart-3" style="width:100%;height:100px"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ui segment __account-card">
+                        <div class="text-wrapper">
+                            <div class="left">
+                                <h5>Kornelia Hull</h5>
+                                <p>Manager</p>
+                            </div>
+                            <div class="right">
+                                <h4>88 mins</h4>
+                            </div>
+                        </div>
+                        <div class="graph-wrapper">
+                            <div class="left"><img src="../admin/img/avatar/51.png" alt="andiamo-images" /></div>
+                            <div class="right">
+                                <div class="andiamo-charts" id="account-chart-4" style="width:100%;height:100px"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="sidebar">
+        <div class="ui fluid vertical accordion styled menu borderless side-menu">
+            <a class="item side-header" href="home-dashboard.html">
+                <div class="ui header">
+                    <img src="../admin/img/logo.svg" alt="andiamo-images" />
+                    <div class="content">ANDIAMO ADMIN</div>
+                </div>
+            </a>
+            <div class="slimscroll">
+                <div class="title"><i class="menu-icon icon iconfont icon-ziyuan118"></i><span class="accordion-text">Dashboards</span><i class="drop-icon icon iconfont icon-BAI-xiajiantou"></i></div>
+                <div class="content">
+                    <a class="item" href="home-dashboard.html">Default</a><a class="item" href="crypto-dashboard.html">Crypto</a><a class="item" href="analystic-dashboard.html">Analytics</a><a class="item" href="restaurant-dashboard.html">Restaurant</a><a class="item" href="fitness-dashboard.html">Fitness</a><a class="item" href="sale-dashboard.html">Sale</a><a class="item" href="event-dashboard.html">Event</a>
+                </div>
+                <div class="ui dropdown item display-none">
+                    <i class="menu-icon icon iconfont icon-ziyuan118"></i>
+                    <div class="menu">
+                        <span class="menu-text">Dashboards</span><a class="item" href="home-dashboard.html">Default</a><a class="item" href="crypto-dashboard.html">Crypto</a><a class="item" href="analystic-dashboard.html">Analytics</a><a class="item" href="restaurant-dashboard.html">Restaurant</a><a class="item" href="fitness-dashboard.html">Fitness</a><a class="item" href="sale-dashboard.html">Sale</a><a class="item" href="event-dashboard.html">Event</a>
+                    </div>
+                </div>
+                <div class="title"><i class="menu-icon icon iconfont icon-ziyuan136"></i><span class="accordion-text">Apps</span><i class="drop-icon icon iconfont icon-BAI-xiajiantou"></i></div>
+                <div class="content"><a class="item" href="calendar.html">Calendar</a><a class="item" href="support-ticket.html">Support Ticket</a><a class="item" href="gallery.html">Gallery</a></div>
+                <div class="ui dropdown item display-none">
+                    <i class="menu-icon icon iconfont icon-ziyuan136"></i>
+                    <div class="menu"><span class="menu-text">Apps</span><a class="item" href="calendar.html">Calendar</a><a class="item" href="support-ticket.html">Support Ticket</a><a class="item" href="gallery.html">Gallery</a></div>
+                </div>
+                <div class="title"><i class="menu-icon icon iconfont icon-ziyuan133"></i><span class="accordion-text">UI Elements</span><i class="drop-icon icon iconfont icon-BAI-xiajiantou"></i></div>
+                <div class="content">
+                    <a class="item" href="grids.html">Grid Systems</a><a class="item" href="buttons.html">Buttons</a><a class="item" href="icons.html">Icons</a><a class="item" href="cards.html">Cards</a><a class="item" href="widgets.html">Widgets</a><a class="item" href="breadcrumbs.html">Breadcrumbs</a><a class="item" href="messages.html">Messages</a><a class="item" href="labels.html">Labels</a><a class="item" href="lists.html">Lists</a><a class="item" href="menu.html">Menu</a><a class="item" href="statistic.html">Statistic</a>
+                </div>
+                <div class="ui dropdown item display-none">
+                    <i class="menu-icon icon iconfont icon-ziyuan133"></i>
+                    <div class="menu">
+                        <span class="menu-text">UI Elements</span><a class="item" href="grids.html">Grid Systems</a><a class="item" href="buttons.html">Buttons</a><a class="item" href="icons.html">Icons</a><a class="item" href="cards.html">Cards</a><a class="item" href="widgets.html">Widgets</a><a class="item" href="breadcrumbs.html">Breadcrumbs</a><a class="item" href="messages.html">Messages</a><a class="item" href="labels.html">Labels</a><a class="item" href="lists.html">Lists</a><a class="item" href="menu.html">Menu</a><a class="item" href="statistic.html">Statistic</a>
+                    </div>
+                </div>
+                <div class="title"><i class="menu-icon icon iconfont icon-ziyuan50"></i><span class="accordion-text">Scripts</span><i class="drop-icon icon iconfont icon-BAI-xiajiantou"></i></div>
+                <div class="content">
+                    <a class="item" href="alerts.html">Alerts</a><a class="item" href="transitions.html">Transitions</a><a class="item" href="dropdowns.html">Dropdowns</a><a class="item" href="accordions.html">Accordion</a><a class="item" href="modals.html">Modals</a><a class="item" href="tooltips.html">Tooltips</a><a class="item" href="tabs.html">Tabs</a>
+                </div>
+                <div class="ui dropdown item display-none">
+                    <i class="menu-icon icon iconfont icon-ziyuan50"></i>
+                    <div class="menu">
+                        <span class="menu-text">Scripts</span><a class="item" href="alerts.html">Alerts</a><a class="item" href="transitions.html">Transitions</a><a class="item" href="dropdowns.html">Dropdowns</a><a class="item" href="accordions.html">Accordion</a><a class="item" href="modals.html">Modals</a><a class="item" href="tooltips.html">Tooltips</a><a class="item" href="tabs.html">Tabs</a>
+                    </div>
+                </div>
+                <div class="title"><i class="menu-icon icon iconfont icon-ziyuan58"></i><span class="accordion-text">Typography</span><i class="drop-icon icon iconfont icon-BAI-xiajiantou"></i></div>
+                <div class="content"><a class="item" href="typography.html">Typography</a><a class="item" href="colors.html">Colors</a></div>
+                <div class="ui dropdown item display-none">
+                    <i class="menu-icon icon iconfont icon-ziyuan58"></i>
+                    <div class="menu"><span class="menu-text">Typography</span><a class="item" href="typography.html">Typography</a><a class="item" href="colors.html">Colors</a></div>
+                </div>
+                <div class="title"><i class="menu-icon icon iconfont icon-ziyuan34"></i><span class="accordion-text">Pages</span><i class="drop-icon icon iconfont icon-BAI-xiajiantou"></i></div>
+                <div class="content">
+                    <a class="item" href="profile.html">Profile</a><a class="item" href="pricing.html">Pricing</a><a class="item" href="register.html">Register</a><a class="item" href="login.html">Login</a><a class="item" href="404.html">Error 404</a><a class="item" href="500.html">Error 500</a><a class="item" href="blank.html">Blank Page</a>
+                </div>
+                <div class="ui dropdown item display-none">
+                    <i class="menu-icon icon iconfont icon-ziyuan34"></i>
+                    <div class="menu">
+                        <span class="menu-text">Pages</span><a class="item" href="profile.html">Profile</a><a class="item" href="pricing.html">Pricing</a><a class="item" href="register.html">Register</a><a class="item" href="login.html">Login</a><a class="item" href="404.html">Error 404</a><a class="item" href="500.html">Error 500</a><a class="item" href="blank.html">Blank Page</a>
+                    </div>
+                </div>
+                <div class="title"><i class="menu-icon icon iconfont icon-ziyuan60"></i><span class="accordion-text">Forms</span><i class="drop-icon icon iconfont icon-BAI-xiajiantou"></i></div>
+                <div class="content"><a class="item" href="basic-forms.html">Basic Forms</a><a class="item" href="form-elements.html">Form Elements</a><a class="item" href="form-validation.html">Form Validation</a></div>
+                <div class="ui dropdown item display-none">
+                    <i class="menu-icon icon iconfont icon-ziyuan60"></i>
+                    <div class="menu"><span class="menu-text">Forms</span><a class="item" href="basic-forms.html">Basic Forms</a><a class="item" href="form-elements.html">Form Elements</a><a class="item" href="form-validation.html">Form Validation</a></div>
+                </div>
+                <div class="title"><i class="menu-icon icon iconfont icon-ziyuan42"></i><span class="accordion-text">Tables</span><i class="drop-icon icon iconfont icon-BAI-xiajiantou"></i></div>
+                <div class="content"><a class="item" href="basic-tables.html">Basic Tables</a><a class="item" href="datatable.html">Data Table</a></div>
+                <div class="ui dropdown item display-none">
+                    <i class="menu-icon icon iconfont icon-ziyuan42"></i>
+                    <div class="menu"><span class="menu-text">Tables</span><a class="item" href="basic-tables.html">Basic Tables</a><a class="item" href="datatable.html">Data Table</a></div>
+                </div>
+                <div class="title"><i class="menu-icon icon iconfont icon-ziyuan39"></i><span class="accordion-text">Charts</span><i class="drop-icon icon iconfont icon-BAI-xiajiantou"></i></div>
+                <div class="content"><a class="item" href="echarts.html">Echarts</a></div>
+                <div class="ui dropdown item display-none">
+                    <i class="menu-icon icon iconfont icon-ziyuan39"></i>
+                    <div class="menu"><span class="menu-text">Charts</span><a class="item" href="echarts.html">Echarts</a></div>
+                </div>
+                <div class="title"><i class="menu-icon icon iconfont icon-ziyuan127"></i><span class="accordion-text">Maps</span><i class="drop-icon icon iconfont icon-BAI-xiajiantou"></i></div>
+                <div class="content"><a class="item" href="maps.html">Maps</a></div>
+                <div class="ui dropdown item display-none">
+                    <i class="menu-icon icon iconfont icon-ziyuan127"></i>
+                    <div class="menu"><span class="menu-text">Maps</span><a class="item" href="maps.html">Maps</a></div>
+                </div>
+                <div class="title"><i class="menu-icon icon iconfont icon-ziyuan132"></i><span class="accordion-text">Multi Level</span><i class="drop-icon icon iconfont icon-BAI-xiajiantou"></i></div>
+                <div class="content">
+                    <a class="item" href="#">Multi Level 1</a>
+                    <div class="accordion">
+                        <div class="title"><span class="accordion-text">Multi Level 2</span><i class="drop-icon icon iconfont icon-BAI-xiajiantou"></i></div>
+                        <div class="content">
+                            <a class="item" href="#">Multi Level 2.1</a>
+                            <div class="accordion">
+                                <div class="title"><span class="accordion-text">Multi Level 2.2</span><i class="drop-icon icon iconfont icon-BAI-zuojiantou"></i></div>
+                                <div class="content"><a class="item" href="#">Multi Level 2.2.1</a><a class="item" href="#">Multi Level 2.2.2</a><a class="item" href="#">Multi Level 2.2.3</a></div>
+                            </div>
+                            <a class="item" href="#">Multi Level 2.3</a>
+                        </div>
+                    </div>
+                    <a class="item" href="#">Multi Level 3</a>
+                </div>
+                <div class="ui dropdown item display-none">
+                    <i class="menu-icon icon iconfont icon-ziyuan132"></i>
+                    <div class="menu">
+                        <span class="menu-text">Multi Level</span><a class="item" href="#">Multi Level 1</a>
+                        <div class="item">
+                            <i class="dropdown icon"></i><span class="text">Multi Level 2</span>
+                            <div class="menu">
+                                <a class="item" href="#">Multi Level 2.1</a>
+                                <div class="item">
+                                    <i class="dropdown icon"></i><span class="text">Multi Level 2.2</span>
+                                    <div class="menu"><a class="item" href="#">Multi Level 2.2.1</a><a class="item" href="#">Multi Level 2.2.2</a><a class="item" href="#">Multi Level 2.2.3</a></div>
+                                </div>
+                                <a class="item" href="#">Multi Level 2.3</a>
+                            </div>
+                        </div>
+                        <a class="item" href="#">Multi Level 3</a>
+                    </div>
+                </div>
+                <div class="title"><i class="menu-icon icon iconfont icon-ziyuan111"></i><span class="accordion-text">Docs</span><i class="drop-icon icon iconfont icon-BAI-xiajiantou"></i></div>
+                <div class="content"><a class="item" href="../docs/index.html">Andiamo Document</a></div>
+                <div class="ui dropdown item display-none">
+                    <i class="menu-icon icon iconfont icon-ziyuan111"></i>
+                    <div class="menu"><span class="menu-text">Docs</span><a class="item" href="../docs/index.html">Andiamo Document</a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="pusher">
+        <div class="content-wrapper">
+            <div class="ui top fixed icon menu borderless nav-menu">
+                <a class="toc item toggle-sidebar"><i class="icon large iconfont icon-ziyuan114"></i></a>
+                <div class="right menu">
+                    <div class="item">
+                        <input class="dark-toggle" id="toggle" type="checkbox" />
+                    </div>
+                    <div class="ui dropdown andi-dropdown item lang-dropdown">
+                        English<i class="dropdown icon"></i>
+                        <div class="menu">
+                            <a class="item"><i class="united kingdom flag"></i>English</a><a class="item"><i class="turkey flag"></i>Turkish</a><a class="item"><i class="spain flag"></i>Spanish</a>
+                        </div>
+                    </div>
+                    <div class="ui dropdown andi-dropdown item">
+                        <img class="ui mini circular image navbar-img" src="../admin/img/people/1.jpg" alt="label-image" />
+                        <div class="menu">
+                            <a class="item" href="#">@username</a><a class="item" href="profile.html">Profile</a><a class="item" href="#">Settings</a>
+                            <div class="ui divider"></div>
+                            <a class="item">Need Help?</a><a class="item" asp-area="admin" asp-controller="Home" asp-action="Logout">Sign Out</a>
+                        </div>
+                    </div>
+                    <a class="item toggle-right-sidebar"><i class="icon large iconfont icon-ziyuan59"></i></a>
+                </div>
+            </div>
+            <div class="content-page">
+                <div class="ui container fluid">
+                    @RenderBody()
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="content">All Rights Reserved, Copyright © 2020 Partitect Company</div>
+    </footer>
+    <!-- Scripts -->
+    <script src="../admin/vendors/jquery/dist/jquery.min.js"></script>
+    <script src="../admin/vendors/fomantic-ui/dist/semantic.min.js"></script>
+    <script src="../admin/vendors/echarts/dist/echarts-en.min.js"></script>
+    <script src="../admin/vendors/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+    <script src="../admin/vendors/waves/dist/waves.min.js"></script>
+    <script src="../admin/vendors/clipboard/dist/clipboard.min.js"></script>
+    <script src="../admin/vendors/prism/prism.js"></script>
+    <script src="../admin/vendors/prism/plugins/normalize-whitespace/prism-normalize-whitespace.min.js"></script>
+    <script src="../admin/vendors/prism/plugins/toolbar/prism-toolbar.min.js"></script>
+    <script src="../admin/js/vendors/right-sidebar-charts.min.js"></script>
+    <script src="../admin/js/vendors/prism-script.min.js"></script>
+    <script src="../admin/vendors/echarts/map/js/world.js"></script>
+    <script src="../admin/js/vendors/home-dashboard.min.js"></script>
+    <script src="../admin/fonts/svg-icon/weather/iconfont.js"></script>
+    <script src="../admin/js/app.min.js"></script>
 </body>
 </html>

@@ -1,1 +1,232 @@
-﻿<h1>Admin Panel</h1>
+﻿<div class="ui grid stackable">
+    <div class="row">
+        <div class="column ten wide">
+            <div class="ui segment weather-segment">
+                <h5>Weather Report</h5>
+                <div class="ui grid stackable">
+                    <div class="row">
+                        <div class="column four wide">
+                            <div class="ui segment day-segment">
+                                <div class="ui one statistics tiny">
+                                    <div class="statistic">
+                                        <div class="value">Sun</div>
+                                        <div class="value">
+                                            <svg class="ui image" aria-hidden="true">
+                                                <use xlink:href="#icon--qing"></use>
+                                            </svg>
+                                        </div>
+                                        <div class="value">24°</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="column four wide">
+                            <div class="ui segment day-segment">
+                                <div class="ui one statistics mini">
+                                    <div class="statistic">
+                                        <div class="value">Mon</div>
+                                        <div class="value">
+                                            <svg class="ui image" aria-hidden="true">
+                                                <use xlink:href="#icon-baoyu"></use>
+                                            </svg>
+                                        </div>
+                                        <div class="value">20°</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="column four wide">
+                            <div class="ui segment day-segment">
+                                <div class="ui one statistics mini">
+                                    <div class="statistic">
+                                        <div class="value">Tue</div>
+                                        <div class="value">
+                                            <svg class="ui image" aria-hidden="true">
+                                                <use xlink:href="#icon-wu"></use>
+                                            </svg>
+                                        </div>
+                                        <div class="value">18°</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="column four wide">
+                            <div class="ui segment day-segment">
+                                <div class="ui one statistics mini">
+                                    <div class="statistic">
+                                        <div class="value">Wed</div>
+                                        <div class="value">
+                                            <svg class="ui image" aria-hidden="true">
+                                                <use xlink:href="#icon-zhenyuzhuanqing"></use>
+                                            </svg>
+                                        </div>
+                                        <div class="value">21°</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="column six wide">
+            <div class="ui grid stackable">
+                <div class="row">
+                    <div class="column eight wide">
+                        <div class="ui segment color-iconed-segment colored primary">
+                            <h4>Trophies</h4>
+                            <svg aria-hidden="true">
+                                <use xlink:href="#icon-jiangbei"></use>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="column eight wide">
+                        <div class="ui segment color-iconed-segment colored danger">
+                            <h4>Security</h4>
+                            <svg aria-hidden="true">
+                                <use xlink:href="#icon-dengpao"></use>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="column eight wide">
+                        <div class="ui segment color-iconed-segment colored success">
+                            <h4>Ideas</h4>
+                            <svg aria-hidden="true">
+                                <use xlink:href="#icon-dunpai"></use>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="column eight wide">
+                        <div class="ui segment color-iconed-segment colored info">
+                            <h4>Lights</h4>
+                            <svg aria-hidden="true">
+                                <use xlink:href="#icon-jiangpai"></use>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="column ten wide">
+            <div class="ui grid stackable">
+                <div class="row three column">
+                    <div class="column">
+                        <div class="ui segment">
+                            <h6><i class="icon iconfont icon-hot"></i>Gas Status</h6>
+                            <h1>76<small class="text-muted">mpg</small></h1>
+                            <div class="andiamo-charts" id="home-chart1" style="height:50px;width:100%"></div>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="ui segment">
+                            <h6><i class="icon iconfont icon-chaping"></i>Water Status</h6>
+                            <h1>9.75<small class="text-muted">m3</small></h1>
+                            <div class="andiamo-charts" id="home-chart2" style="height:50px;width:100%"></div>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="ui segment">
+                            <h6><i class="icon iconfont icon-faxian"></i>Power Status</h6>
+                            <h1>600<small class="text-muted">kw</small></h1>
+                            <div class="andiamo-charts" id="home-chart3" style="height:50px;width:100%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="ui grid stackable">
+                <div class="row three column">
+                    <div class="column">
+                        <div class="ui segment">
+                            <h6 class="text-muted">Heater</h6>
+                            <div class="ui image centered">
+                                <svg class="home-icon" width="100%" height="100">
+                                    <image xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/img/svg/home-icons/heater.svg" x="0" y="0" width="100%" height="100%"></image>
+                                </svg>
+                            </div>
+                            <label class="switch andiamo-switch top"> <input type="checkbox" /><span></span> </label>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="ui segment colored energy">
+                            <h6 class="text-muted">Lights</h6>
+                            <div class="ui image centered">
+                                <svg class="home-icon" width="100%" height="100">
+                                    <image xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/img/svg/home-icons/light.svg" x="0" y="0" width="100%" height="100%"></image>
+                                </svg>
+                            </div>
+                            <label class="switch andiamo-switch top"> <input type="checkbox" checked="checked" /><span></span> </label>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="ui segment">
+                            <h6 class="text-muted">Water</h6>
+                            <div class="ui image centered">
+                                <svg class="home-icon" width="100%" height="100">
+                                    <image xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/img/svg/home-icons/water.svg" x="0" y="0" width="100%" height="100%"></image>
+                                </svg>
+                            </div>
+                            <label class="switch andiamo-switch top"> <input type="checkbox" /><span></span> </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="ui grid stackable">
+                <div class="row three column">
+                    <div class="column">
+                        <div class="ui segment colored energy">
+                            <h6 class="text-muted">Bathroom</h6>
+                            <div class="ui image centered">
+                                <svg class="home-icon" width="100%" height="100">
+                                    <image xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/img/svg/home-icons/bath.svg" x="0" y="0" width="100%" height="100%"></image>
+                                </svg>
+                            </div>
+                            <label class="switch andiamo-switch top"> <input type="checkbox" checked="checked" /><span></span> </label>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="ui segment">
+                            <h6 class="text-muted">Air Conditioner</h6>
+                            <div class="ui image centered">
+                                <svg class="home-icon" width="100%" height="100">
+                                    <image xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/img/svg/home-icons/air-con.svg" x="0" y="0" width="100%" height="100%"></image>
+                                </svg>
+                            </div>
+                            <label class="switch andiamo-switch top"> <input type="checkbox" /><span></span> </label>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="ui segment colored energy">
+                            <h6 class="text-muted">Sound</h6>
+                            <div class="ui image centered">
+                                <svg class="home-icon" width="100%" height="100">
+                                    <image xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/img/svg/home-icons/sound.svg" x="0" y="0" width="100%" height="100%"></image>
+                                </svg>
+                            </div>
+                            <label class="switch andiamo-switch top"> <input type="checkbox" checked="checked" /><span></span> </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="column six wide">
+            <div class="ui segment">
+                <h6>Remaining Assets</h6>
+                <div class="andiamo-charts" id="home-chart4" style="height:217px;width:100%"></div>
+            </div>
+            <div class="ui segment">
+                <h6>Day Stats</h6>
+                <div class="andiamo-charts" id="home-chart5" style="height:217px;width:100%"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="ui grid stackable">
+    <div class="row">
+        <div class="column sixteen wide">
+            <div class="ui segment">
+                <h6>World Ranking Status</h6>
+                <div class="andiamo-charts" id="home-chart6" style="height:500px;width:100%"></div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,94 @@
+﻿@model Admin;
+@{
+    Layout = null;
+    var returnUrl = @Context.Request.Query["ReturnUrl"];
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Login - Andiamo Admin Template</title>
+
+    <meta name="description" content="Andiamo Fomantic-ui Based Admin Template" />
+    <meta name="author" content="Partitect" />
+    <meta name="classification" content="semantic,semantic-ui,fomantic-ui,admin,template,admin-template,TemplateMonster,css,pug,sass" />
+    <meta name="copyright" content="1 December 2020 partitect.info" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta property="og:url" content="https://andiamo.netlify.app/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Andiamo Admin Template" />
+    <meta property="og:description" content="Andiamo Fomantic-ui Based Admin Template" />
+    <meta property="og:image" content="admin/img/logo.svg" />
+    <meta property="og:site_name" content="Andiamo Admin Template" />
+    <meta property="og:locale" content="en" />
+    <meta property="article:author" content="Andiamo Admin Template" />
+
+    <!-- Address Bar Color -->
+    <meta name="theme-color" content="#ffffff" />
+
+    <!-- Robots -->
+    <meta name="robots" content="noindex,nofollow" />
+    <meta name="googlebot" content="noindex,nofollow" />
+
+    <!-- Favicons -->
+    <link rel="shortcut icon" href="admin/img/favicon/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="admin/img/favicon/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="admin/img/favicon/favicon.svg" />
+    <link rel="mask-icon" href="admin/img/favicon/favicon.svg" color="#ffffff" />
+
+    <link rel="canonical" href="https://andiamo.netlify.app/" />
+    <link type="text/plain" rel="author" href="https://andiamo.netlify.app//humans.txt" />
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="../admin/vendors/fomantic-ui/dist/semantic.min.css" />
+    <link rel="stylesheet" href="./admin/vendors/waves/dist/waves.min.css" />
+    <link rel="stylesheet" href="../admin/vendors/prism/themes/prism-tomorrow.css" />
+    <link rel="stylesheet" href="../admin/vendors/prism/plugins/toolbar//prism-toolbar.css" />
+    <link id="AndiamoIconfont" rel="stylesheet" href="../admin/fonts/andiamo-icons/iconfont.css" />
+    <link id="TemplateIconfont" rel="stylesheet" href="../admin/fonts/iconfont/iconfont.css" />
+    <link rel="stylesheet" href="../admin/css/app.min.css" />
+</head>
+<body class="__error-pages">
+    <div class="pusher">
+        <div class="ui container fluid">
+            <div class="ui segment __login-segment">
+                <div class="ui segment z-depth-5 __login-content-segment">
+                    <div class="ui grid stackable equal width">
+                        <div class="row">
+                            <div class="column computer only column">
+                                <div class="ui basic segment __login-image"><img class="ui fluid image" src="../admin/img/svg/undraw_mobile_login_ikmv.svg" alt="andiamo-images" /></div>
+                            </div>
+                            <div class="column">
+                                <div class="ui basic segment __login-form-segment">
+                                    <div class="ui form fluid">
+                                        <form asp-area="admin" asp-controller="Home" asp-action="Login" asp-route-returnurl="@ViewBag.ReturnUrl" method="post">
+                                            <input type="hidden" value="@ViewBag.ReturnUrl" name="ReturnUrl"/>
+                                            <img class="ui small image centered" src="../admin/img/logo.svg" alt="andiamo-images" />
+                                            <h4 class="ui dividing header center aligned">ANDIAMO ADMIN LOGIN</h4>
+                                            <div class="field">
+                                                <label>Email</label>
+                                                <input asp-for="@Model.EmailAddress" placeholder="Email" />
+                                            </div>
+                                            <div class="field">
+                                                <label>Password</label>
+                                                <input asp-for="@Model.Password" placeholder="Password" />
+                                            </div>
+                                            @Html.AntiForgeryToken()
+                                            <button type="submit" class="andi-btn filled primary fluid" href="/home-dashboard.html">Login</button>
+                                            <span>@ViewBag.hata</span>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+

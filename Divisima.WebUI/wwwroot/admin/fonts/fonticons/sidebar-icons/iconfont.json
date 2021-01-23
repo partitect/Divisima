@@ -1,0 +1,177 @@
+{
+  "id": "2002614",
+  "name": "andiamo-sidebar",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "16473865",
+      "name": "商城",
+      "font_class": "Bag",
+      "unicode": "e63e",
+      "unicode_decimal": 58942
+    },
+    {
+      "icon_id": "16473866",
+      "name": "数据",
+      "font_class": "Activity",
+      "unicode": "e63f",
+      "unicode_decimal": 58943
+    },
+    {
+      "icon_id": "16473867",
+      "name": "菜单",
+      "font_class": "Category",
+      "unicode": "e640",
+      "unicode_decimal": 58944
+    },
+    {
+      "icon_id": "16473868",
+      "name": "标签",
+      "font_class": "Bookmark",
+      "unicode": "e641",
+      "unicode_decimal": 58945
+    },
+    {
+      "icon_id": "16473869",
+      "name": "日历",
+      "font_class": "Calendar",
+      "unicode": "e642",
+      "unicode_decimal": 58946
+    },
+    {
+      "icon_id": "16473870",
+      "name": "声音",
+      "font_class": "Chart",
+      "unicode": "e643",
+      "unicode_decimal": 58947
+    },
+    {
+      "icon_id": "16473871",
+      "name": "圈子",
+      "font_class": "Discovery",
+      "unicode": "e644",
+      "unicode_decimal": 58948
+    },
+    {
+      "icon_id": "16473872",
+      "name": "内容",
+      "font_class": "Document",
+      "unicode": "e645",
+      "unicode_decimal": 58949
+    },
+    {
+      "icon_id": "16473873",
+      "name": "消息2",
+      "font_class": "Chat",
+      "unicode": "e646",
+      "unicode_decimal": 58950
+    },
+    {
+      "icon_id": "16473874",
+      "name": "首页",
+      "font_class": "Home",
+      "unicode": "e647",
+      "unicode_decimal": 58951
+    },
+    {
+      "icon_id": "16473875",
+      "name": "信息",
+      "font_class": "Message",
+      "unicode": "e648",
+      "unicode_decimal": 58952
+    },
+    {
+      "icon_id": "16473876",
+      "name": "分析",
+      "font_class": "Graph",
+      "unicode": "e649",
+      "unicode_decimal": 58953
+    },
+    {
+      "icon_id": "16473877",
+      "name": "搜索",
+      "font_class": "Search",
+      "unicode": "e64a",
+      "unicode_decimal": 58954
+    },
+    {
+      "icon_id": "16473878",
+      "name": "我",
+      "font_class": "Profile",
+      "unicode": "e64b",
+      "unicode_decimal": 58955
+    },
+    {
+      "icon_id": "16473879",
+      "name": "添加",
+      "font_class": "Plus",
+      "unicode": "e64c",
+      "unicode_decimal": 58956
+    },
+    {
+      "icon_id": "16473880",
+      "name": "钱包",
+      "font_class": "Wallet",
+      "unicode": "e64d",
+      "unicode_decimal": 58957
+    },
+    {
+      "icon_id": "16473881",
+      "name": "扫码",
+      "font_class": "Scan",
+      "unicode": "e64e",
+      "unicode_decimal": 58958
+    },
+    {
+      "icon_id": "16473882",
+      "name": "游戏",
+      "font_class": "Game",
+      "unicode": "e64f",
+      "unicode_decimal": 58959
+    },
+    {
+      "icon_id": "16473883",
+      "name": "位置",
+      "font_class": "Location",
+      "unicode": "e650",
+      "unicode_decimal": 58960
+    },
+    {
+      "icon_id": "16473884",
+      "name": "文件",
+      "font_class": "Folder",
+      "unicode": "e651",
+      "unicode_decimal": 58961
+    },
+    {
+      "icon_id": "16473885",
+      "name": "消息",
+      "font_class": "Notification",
+      "unicode": "e652",
+      "unicode_decimal": 58962
+    },
+    {
+      "icon_id": "16473886",
+      "name": "喜欢",
+      "font_class": "Heart",
+      "unicode": "e653",
+      "unicode_decimal": 58963
+    },
+    {
+      "icon_id": "16473887",
+      "name": "收藏",
+      "font_class": "Star",
+      "unicode": "e654",
+      "unicode_decimal": 58964
+    },
+    {
+      "icon_id": "16473888",
+      "name": "设置",
+      "font_class": "Setting",
+      "unicode": "e655",
+      "unicode_decimal": 58965
+    }
+  ]
+}

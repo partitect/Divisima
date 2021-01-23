@@ -19,6 +19,45 @@ namespace Divisima.DAL.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("ProductVersion", "5.0.1");
 
+            modelBuilder.Entity("Divisima.DAL.Entities.Admin", b =>
+                {
+                    b.Property<int>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .UseIdentityColumn();
+
+                    b.Property<string>("EmailAddress")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("varchar(100)");
+
+                    b.Property<string>("Name")
+                        .HasMaxLength(30)
+                        .HasColumnType("varchar(30)");
+
+                    b.Property<string>("Password")
+                        .IsRequired()
+                        .HasMaxLength(32)
+                        .HasColumnType("varchar(32)");
+
+                    b.Property<string>("Surname")
+                        .HasMaxLength(30)
+                        .HasColumnType("varchar(30)");
+
+                    b.HasKey("ID");
+
+                    b.ToTable("Admin");
+
+                    b.HasData(
+                        new
+                        {
+                            ID = 1,
+                            EmailAddress = "telatkaya@yandex.com",
+                            Name = "Telat Kaya",
+                            Password = "202cb962ac59075b964b07152d234b70"
+                        });
+                });
+
             modelBuilder.Entity("Divisima.DAL.Entities.Brand", b =>
                 {
                     b.Property<int>("ID")

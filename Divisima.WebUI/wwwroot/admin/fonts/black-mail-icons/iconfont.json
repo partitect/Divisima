@@ -1,0 +1,261 @@
+{
+  "id": "1619854",
+  "name": "black-mail",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "7457717",
+      "name": "Archive",
+      "font_class": "Archive",
+      "unicode": "e61c",
+      "unicode_decimal": 58908
+    },
+    {
+      "icon_id": "7457720",
+      "name": "Chat-check",
+      "font_class": "Chat-check",
+      "unicode": "e61d",
+      "unicode_decimal": 58909
+    },
+    {
+      "icon_id": "7457721",
+      "name": "Chat-error",
+      "font_class": "Chat-error",
+      "unicode": "e61e",
+      "unicode_decimal": 58910
+    },
+    {
+      "icon_id": "7457730",
+      "name": "Clipboard-check",
+      "font_class": "Clipboard-check",
+      "unicode": "e61f",
+      "unicode_decimal": 58911
+    },
+    {
+      "icon_id": "7457731",
+      "name": "Flag",
+      "font_class": "Flag",
+      "unicode": "e621",
+      "unicode_decimal": 58913
+    },
+    {
+      "icon_id": "7457737",
+      "name": "Forward",
+      "font_class": "Forward",
+      "unicode": "e623",
+      "unicode_decimal": 58915
+    },
+    {
+      "icon_id": "7457738",
+      "name": "Incoming-mail",
+      "font_class": "Incoming-mail",
+      "unicode": "e624",
+      "unicode_decimal": 58916
+    },
+    {
+      "icon_id": "7457739",
+      "name": "Incoming-box",
+      "font_class": "Incoming-box",
+      "unicode": "e625",
+      "unicode_decimal": 58917
+    },
+    {
+      "icon_id": "7457741",
+      "name": "Mail-@",
+      "font_class": "Mail-",
+      "unicode": "e626",
+      "unicode_decimal": 58918
+    },
+    {
+      "icon_id": "7457742",
+      "name": "Mail-box",
+      "font_class": "Mail-box",
+      "unicode": "e627",
+      "unicode_decimal": 58919
+    },
+    {
+      "icon_id": "7457743",
+      "name": "Mail-attachment",
+      "font_class": "Mail-attachment",
+      "unicode": "e628",
+      "unicode_decimal": 58920
+    },
+    {
+      "icon_id": "7457744",
+      "name": "Mail-error",
+      "font_class": "Mail-error",
+      "unicode": "e629",
+      "unicode_decimal": 58921
+    },
+    {
+      "icon_id": "7457745",
+      "name": "Mail-locked",
+      "font_class": "Mail-locked",
+      "unicode": "e62a",
+      "unicode_decimal": 58922
+    },
+    {
+      "icon_id": "7457746",
+      "name": "Mail-notification",
+      "font_class": "Mail-notification",
+      "unicode": "e62b",
+      "unicode_decimal": 58923
+    },
+    {
+      "icon_id": "7457747",
+      "name": "Mail-unocked",
+      "font_class": "Mail-unocked",
+      "unicode": "e62c",
+      "unicode_decimal": 58924
+    },
+    {
+      "icon_id": "7457748",
+      "name": "Mail",
+      "font_class": "Mail",
+      "unicode": "e62d",
+      "unicode_decimal": 58925
+    },
+    {
+      "icon_id": "7457749",
+      "name": "Outgoing-box",
+      "font_class": "Outgoing-box",
+      "unicode": "e62e",
+      "unicode_decimal": 58926
+    },
+    {
+      "icon_id": "7457750",
+      "name": "Mail-heart",
+      "font_class": "Mail-heart",
+      "unicode": "e62f",
+      "unicode_decimal": 58927
+    },
+    {
+      "icon_id": "7457751",
+      "name": "Outgoing-mail",
+      "font_class": "Outgoing-mail",
+      "unicode": "e630",
+      "unicode_decimal": 58928
+    },
+    {
+      "icon_id": "7457753",
+      "name": "Mail-opened",
+      "font_class": "Mail-opened",
+      "unicode": "e631",
+      "unicode_decimal": 58929
+    },
+    {
+      "icon_id": "7457754",
+      "name": "Reply-all",
+      "font_class": "Reply-all",
+      "unicode": "e632",
+      "unicode_decimal": 58930
+    },
+    {
+      "icon_id": "7457755",
+      "name": "Readed-mail",
+      "font_class": "Readed-mail",
+      "unicode": "e633",
+      "unicode_decimal": 58931
+    },
+    {
+      "icon_id": "7457756",
+      "name": "Reply",
+      "font_class": "Reply",
+      "unicode": "e634",
+      "unicode_decimal": 58932
+    },
+    {
+      "icon_id": "7457757",
+      "name": "Right",
+      "font_class": "Right",
+      "unicode": "e635",
+      "unicode_decimal": 58933
+    },
+    {
+      "icon_id": "7457758",
+      "name": "Send",
+      "font_class": "Send",
+      "unicode": "e636",
+      "unicode_decimal": 58934
+    },
+    {
+      "icon_id": "7457760",
+      "name": "Sending",
+      "font_class": "Sending",
+      "unicode": "e637",
+      "unicode_decimal": 58935
+    },
+    {
+      "icon_id": "7457761",
+      "name": "Safe-chat",
+      "font_class": "Safe-chat",
+      "unicode": "e638",
+      "unicode_decimal": 58936
+    },
+    {
+      "icon_id": "7457763",
+      "name": "Snoozed-mail",
+      "font_class": "Snoozed-mail",
+      "unicode": "e639",
+      "unicode_decimal": 58937
+    },
+    {
+      "icon_id": "7457764",
+      "name": "Shield-thunder",
+      "font_class": "Shield-thunder",
+      "unicode": "e63a",
+      "unicode_decimal": 58938
+    },
+    {
+      "icon_id": "7457765",
+      "name": "Share",
+      "font_class": "Share",
+      "unicode": "e63b",
+      "unicode_decimal": 58939
+    },
+    {
+      "icon_id": "7457766",
+      "name": "Urgent-mail",
+      "font_class": "Urgent-mail",
+      "unicode": "e63c",
+      "unicode_decimal": 58940
+    },
+    {
+      "icon_id": "7457767",
+      "name": "Shield-user",
+      "font_class": "Shield-user",
+      "unicode": "e63d",
+      "unicode_decimal": 58941
+    },
+    {
+      "icon_id": "7457768",
+      "name": "Thumbtack",
+      "font_class": "Thumbtack",
+      "unicode": "e63e",
+      "unicode_decimal": 58942
+    },
+    {
+      "icon_id": "7457769",
+      "name": "Write",
+      "font_class": "Write",
+      "unicode": "e63f",
+      "unicode_decimal": 58943
+    },
+    {
+      "icon_id": "7457770",
+      "name": "Sending mail",
+      "font_class": "Sendingmail",
+      "unicode": "e640",
+      "unicode_decimal": 58944
+    },
+    {
+      "icon_id": "7457771",
+      "name": "Spam",
+      "font_class": "Spam",
+      "unicode": "e641",
+      "unicode_decimal": 58945
+    }
+  ]
+}
