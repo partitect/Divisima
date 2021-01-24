@@ -1,0 +1,24 @@
+﻿@model Brand
+<div class="basic-forms-content">
+    <div class="ui grid stackable equal width">
+        <div class="row">
+            <div class="column">
+                <div class="ui segment">
+                    <h4>Marka Düzenle</h4>
+                    <form asp-controller="Brand" asp-action="Edit" method="post">
+                        <div class="ui form andi-form">
+                            <div class="field">
+                                <label asp-for="@Model.Name"></label>
+                                <input asp-for="@Model.Name" />
+                                <input asp-for="@Model.ID" type="hidden" />
+                            </div>
+                            @Html.AntiForgeryToken()
+                            <button class="ui button" type="submit">Güncelle</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

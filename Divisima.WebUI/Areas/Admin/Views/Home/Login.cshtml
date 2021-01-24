@@ -43,13 +43,13 @@
     <link type="text/plain" rel="author" href="https://andiamo.netlify.app//humans.txt" />
 
     <!-- Styles -->
-    <link rel="stylesheet" href="../admin/vendors/fomantic-ui/dist/semantic.min.css" />
-    <link rel="stylesheet" href="./admin/vendors/waves/dist/waves.min.css" />
-    <link rel="stylesheet" href="../admin/vendors/prism/themes/prism-tomorrow.css" />
-    <link rel="stylesheet" href="../admin/vendors/prism/plugins/toolbar//prism-toolbar.css" />
-    <link id="AndiamoIconfont" rel="stylesheet" href="../admin/fonts/andiamo-icons/iconfont.css" />
-    <link id="TemplateIconfont" rel="stylesheet" href="../admin/fonts/iconfont/iconfont.css" />
-    <link rel="stylesheet" href="../admin/css/app.min.css" />
+    <link rel="stylesheet" href="/admin/vendors/fomantic-ui/dist/semantic.min.css" />
+    <link rel="stylesheet" href="/admin/vendors/waves/dist/waves.min.css" />
+    <link rel="stylesheet" href="/admin/vendors/prism/themes/prism-tomorrow.css" />
+    <link rel="stylesheet" href="/admin/vendors/prism/plugins/toolbar//prism-toolbar.css" />
+    <link id="AndiamoIconfont" rel="stylesheet" href="/admin/fonts/andiamo-icons/iconfont.css" />
+    <link id="TemplateIconfont" rel="stylesheet" href="/admin/fonts/iconfont/iconfont.css" />
+    <link rel="stylesheet" href="/admin/css/app.min.css" />
 </head>
 <body class="__error-pages">
     <div class="pusher">
@@ -59,14 +59,14 @@
                     <div class="ui grid stackable equal width">
                         <div class="row">
                             <div class="column computer only column">
-                                <div class="ui basic segment __login-image"><img class="ui fluid image" src="../admin/img/svg/undraw_mobile_login_ikmv.svg" alt="andiamo-images" /></div>
+                                <div class="ui basic segment __login-image"><img class="ui fluid image" src="/admin/img/svg/undraw_mobile_login_ikmv.svg" alt="andiamo-images" /></div>
                             </div>
                             <div class="column">
                                 <div class="ui basic segment __login-form-segment">
                                     <div class="ui form fluid">
                                         <form asp-area="admin" asp-controller="Home" asp-action="Login" asp-route-returnurl="@ViewBag.ReturnUrl" method="post">
                                             <input type="hidden" value="@ViewBag.ReturnUrl" name="ReturnUrl"/>
-                                            <img class="ui small image centered" src="../admin/img/logo.svg" alt="andiamo-images" />
+                                            <img class="ui small image centered" src="/admin/img/logo.svg" alt="andiamo-images" />
                                             <h4 class="ui dividing header center aligned">ANDIAMO ADMIN LOGIN</h4>
                                             <div class="field">
                                                 <label>Email</label>

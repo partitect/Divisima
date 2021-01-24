@@ -63,7 +63,7 @@
                     <p>Quantity</p>
                     <div class="pro-qty"><input type="text" value="1"></div>
                 </div>
-                <a href="#" class="site-btn">SHOP NOW</a>
+                <button class="site-btn" onclick="addCart(@Model.Product.ID,'@Model.Product.ProductPictures.FirstOrDefault().Path', $('.pro-qty input').val());">SEPETE EKLE</button>
                 <div id="accordion" class="accordion-area">
                     <div class="panel">
                         <div class="panel-header" id="headingOne">

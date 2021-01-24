@@ -1,6 +1,4 @@
-﻿@{
-    var username = User.Identity.Name;
-}
+﻿@using Divisima.WebUI.Areas.Admin.ViewComponents;
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,7 +16,7 @@
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Andiamo Admin Template" />
     <meta property="og:description" content="Andiamo Fomantic-ui Based Admin Template" />
-    <meta property="og:image" content="../admin/img/logo.svg" />
+    <meta property="og:image" content="/admin/img/logo.svg" />
     <meta property="og:site_name" content="Andiamo Admin Template" />
     <meta property="og:locale" content="en" />
     <meta property="article:author" content="Andiamo Admin Template" />
@@ -31,22 +29,22 @@
     <meta name="googlebot" content="noindex,nofollow" />
 
     <!-- Favicons -->
-    <link rel="shortcut icon" href="../admin/img/favicon/favicon.svg" type="image/svg+xml" />
-    <link rel="icon" href="../admin/img/favicon/favicon.svg" type="image/svg+xml" />
-    <link rel="apple-touch-icon" href="../admin/img/favicon/favicon.svg" />
-    <link rel="mask-icon" href="../admin/img/favicon/favicon.svg" color="#ffffff" />
+    <link rel="shortcut icon" href="/admin/img/favicon/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/admin/img/favicon/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/admin/img/favicon/favicon.svg" />
+    <link rel="mask-icon" href="/admin/img/favicon/favicon.svg" color="#ffffff" />
 
     <link rel="canonical" href="https://andiamo.netlify.app/" />
     <link type="text/plain" rel="author" href="https://andiamo.netlify.app//humans.txt" />
 
     <!-- Styles -->
-    <link rel="stylesheet" href="../admin/vendors/fomantic-ui/dist/semantic.min.css" />
-    <link rel="stylesheet" href="../admin/vendors/waves/dist/waves.min.css" />
-    <link rel="stylesheet" href="../admin/vendors/prism/themes/prism-tomorrow.css" />
-    <link rel="stylesheet" href="../admin/vendors/prism/plugins/toolbar//prism-toolbar.css" />
-    <link id="AndiamoIconfont" rel="stylesheet" href="../admin/fonts/andiamo-icons/iconfont.css" />
-    <link id="TemplateIconfont" rel="stylesheet" href="../admin/fonts/iconfont/iconfont.css" />
-    <link rel="stylesheet" href="../admin/css/app.min.css" />
+    <link rel="stylesheet" href="/admin/vendors/fomantic-ui/dist/semantic.min.css" />
+    <link rel="stylesheet" href="/admin/vendors/waves/dist/waves.min.css" />
+    <link rel="stylesheet" href="/admin/vendors/prism/themes/prism-tomorrow.css" />
+    <link rel="stylesheet" href="/admin/vendors/prism/plugins/toolbar//prism-toolbar.css" />
+    <link id="AndiamoIconfont" rel="stylesheet" href="/admin/fonts/andiamo-icons/iconfont.css" />
+    <link id="TemplateIconfont" rel="stylesheet" href="/admin/fonts/iconfont/iconfont.css" />
+    <link rel="stylesheet" href="/admin/css/app.min.css" />
 </head>
 <body>
     <div class="loader-segment">
@@ -139,19 +137,19 @@
                                 <h6>Event List</h6>
                                 <div class="ui divider"></div>
                                 <div class="ui segment __event-list-segment __primary">
-                                    <img src="../admin/img/svg/super_man.svg" alt="andiamo-images" />
+                                    <img src="/admin/img/svg/super_man.svg" alt="andiamo-images" />
                                     <p>Tim Howard cleared</p>
                                 </div>
                                 <div class="ui segment __event-list-segment __secondary">
-                                    <img src="../admin/img/svg/super_woman.svg" alt="andiamo-images" />
+                                    <img src="/admin/img/svg/super_woman.svg" alt="andiamo-images" />
                                     <p>Lenna Burton added now</p>
                                 </div>
                                 <div class="ui segment __event-list-segment __danger">
-                                    <img src="../admin/img/svg/undraw_woman_mevk.svg" alt="andiamo-images" />
+                                    <img src="/admin/img/svg/undraw_woman_mevk.svg" alt="andiamo-images" />
                                     <p>Sunny Swimwell awarded</p>
                                 </div>
                                 <div class="ui segment __event-list-segment __info">
-                                    <img src="../admin/img/svg/undraw_Notify_re_65on.svg" alt="andiamo-images" />
+                                    <img src="/admin/img/svg/undraw_Notify_re_65on.svg" alt="andiamo-images" />
                                     <p>Kate Linpsay add message</p>
                                 </div>
                             </div>
@@ -170,7 +168,7 @@
                             </div>
                         </div>
                         <div class="graph-wrapper">
-                            <div class="left"><img src="../admin/img/avatar/48.png" alt="andiamo-images" /></div>
+                            <div class="left"><img src="/admin/img/avatar/48.png" alt="andiamo-images" /></div>
                             <div class="right">
                                 <div class="andiamo-charts" id="account-chart-1" style="width:100%;height:100px"></div>
                             </div>
@@ -187,7 +185,7 @@
                             </div>
                         </div>
                         <div class="graph-wrapper">
-                            <div class="left"><img src="../admin/img/avatar/49.png" alt="andiamo-images" /></div>
+                            <div class="left"><img src="/admin/img/avatar/49.png" alt="andiamo-images" /></div>
                             <div class="right">
                                 <div class="andiamo-charts" id="account-chart-2" style="width:100%;height:100px"></div>
                             </div>
@@ -204,7 +202,7 @@
                             </div>
                         </div>
                         <div class="graph-wrapper">
-                            <div class="left"><img src="../admin/img/avatar/50.png" alt="andiamo-images" /></div>
+                            <div class="left"><img src="/admin/img/avatar/50.png" alt="andiamo-images" /></div>
                             <div class="right">
                                 <div class="andiamo-charts" id="account-chart-3" style="width:100%;height:100px"></div>
                             </div>
@@ -221,7 +219,7 @@
                             </div>
                         </div>
                         <div class="graph-wrapper">
-                            <div class="left"><img src="../admin/img/avatar/51.png" alt="andiamo-images" /></div>
+                            <div class="left"><img src="/admin/img/avatar/51.png" alt="andiamo-images" /></div>
                             <div class="right">
                                 <div class="andiamo-charts" id="account-chart-4" style="width:100%;height:100px"></div>
                             </div>
@@ -235,11 +233,13 @@
         <div class="ui fluid vertical accordion styled menu borderless side-menu">
             <a class="item side-header" href="home-dashboard.html">
                 <div class="ui header">
-                    <img src="../admin/img/logo.svg" alt="andiamo-images" />
+                    <img src="/admin/img/logo.svg" alt="andiamo-images" />
                     <div class="content">ANDIAMO ADMIN</div>
                 </div>
             </a>
             <div class="slimscroll">
+                <div class="title"><i class="menu-icon icon iconfont icon-ziyuan118"></i><span class="accordion-text"><a asp-controller="Home" asp-action="Index">Ana Sayfa</a></span></div>
+                <div class="title"><i class="menu-icon icon iconfont icon-ziyuan136"></i><span class="accordion-text"><a asp-controller="Brand" asp-action="Index"> Markalar</a></span></div>
                 <div class="title"><i class="menu-icon icon iconfont icon-ziyuan118"></i><span class="accordion-text">Dashboards</span><i class="drop-icon icon iconfont icon-BAI-xiajiantou"></i></div>
                 <div class="content">
                     <a class="item" href="home-dashboard.html">Default</a><a class="item" href="crypto-dashboard.html">Crypto</a><a class="item" href="analystic-dashboard.html">Analytics</a><a class="item" href="restaurant-dashboard.html">Restaurant</a><a class="item" href="fitness-dashboard.html">Fitness</a><a class="item" href="sale-dashboard.html">Sale</a><a class="item" href="event-dashboard.html">Event</a>
@@ -361,29 +361,7 @@
     </div>
     <div class="pusher">
         <div class="content-wrapper">
-            <div class="ui top fixed icon menu borderless nav-menu">
-                <a class="toc item toggle-sidebar"><i class="icon large iconfont icon-ziyuan114"></i></a>
-                <div class="right menu">
-                    <div class="item">
-                        <input class="dark-toggle" id="toggle" type="checkbox" />
-                    </div>
-                    <div class="ui dropdown andi-dropdown item lang-dropdown">
-                        English<i class="dropdown icon"></i>
-                        <div class="menu">
-                            <a class="item"><i class="united kingdom flag"></i>English</a><a class="item"><i class="turkey flag"></i>Turkish</a><a class="item"><i class="spain flag"></i>Spanish</a>
-                        </div>
-                    </div>
-                    <div class="ui dropdown andi-dropdown item">
-                        <img class="ui mini circular image navbar-img" src="../admin/img/people/1.jpg" alt="label-image" />
-                        <div class="menu">
-                            <a class="item" href="#">@username</a><a class="item" href="profile.html">Profile</a><a class="item" href="#">Settings</a>
-                            <div class="ui divider"></div>
-                            <a class="item">Need Help?</a><a class="item" asp-area="admin" asp-controller="Home" asp-action="Logout">Sign Out</a>
-                        </div>
-                    </div>
-                    <a class="item toggle-right-sidebar"><i class="icon large iconfont icon-ziyuan59"></i></a>
-                </div>
-            </div>
+            @await Component.InvokeAsync(typeof(HeaderViewComponent))
             <div class="content-page">
                 <div class="ui container fluid">
                     @RenderBody()
@@ -391,24 +369,24 @@
             </div>
         </div>
     </div>
-    <footer>
-        <div class="content">All Rights Reserved, Copyright © 2020 Partitect Company</div>
-    </footer>
+    @await Component.InvokeAsync(typeof(FooterViewComponent))
     <!-- Scripts -->
-    <script src="../admin/vendors/jquery/dist/jquery.min.js"></script>
-    <script src="../admin/vendors/fomantic-ui/dist/semantic.min.js"></script>
-    <script src="../admin/vendors/echarts/dist/echarts-en.min.js"></script>
-    <script src="../admin/vendors/jquery-slimscroll/jquery.slimscroll.min.js"></script>
-    <script src="../admin/vendors/waves/dist/waves.min.js"></script>
-    <script src="../admin/vendors/clipboard/dist/clipboard.min.js"></script>
-    <script src="../admin/vendors/prism/prism.js"></script>
-    <script src="../admin/vendors/prism/plugins/normalize-whitespace/prism-normalize-whitespace.min.js"></script>
-    <script src="../admin/vendors/prism/plugins/toolbar/prism-toolbar.min.js"></script>
-    <script src="../admin/js/vendors/right-sidebar-charts.min.js"></script>
-    <script src="../admin/js/vendors/prism-script.min.js"></script>
-    <script src="../admin/vendors/echarts/map/js/world.js"></script>
-    <script src="../admin/js/vendors/home-dashboard.min.js"></script>
-    <script src="../admin/fonts/svg-icon/weather/iconfont.js"></script>
-    <script src="../admin/js/app.min.js"></script>
+    <script src="/admin/vendors/jquery/dist/jquery.min.js"></script>
+    <script src="/admin/vendors/fomantic-ui/dist/semantic.min.js"></script>
+    <script src="/admin/vendors/echarts/dist/echarts-en.min.js"></script>
+    <script src="/admin/vendors/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+    <script src="/admin/vendors/waves/dist/waves.min.js"></script>
+    <script src="/admin/vendors/clipboard/dist/clipboard.min.js"></script>
+    <script src="/admin/vendors/prism/prism.js"></script>
+    <script src="/admin/vendors/prism/plugins/normalize-whitespace/prism-normalize-whitespace.min.js"></script>
+    <script src="/admin/vendors/prism/plugins/toolbar/prism-toolbar.min.js"></script>
+    <script src="/admin/js/vendors/right-sidebar-charts.min.js"></script>
+    <script src="/admin/js/vendors/prism-script.min.js"></script>
+    <script src="/admin/vendors/echarts/map/js/world.js"></script>
+    <script src="/admin/js/vendors/home-dashboard.min.js"></script>
+    <script src="/admin/fonts/svg-icon/weather/iconfont.js"></script>
+    <script src="/admin/js/app.min.js"></script>
+    @RenderSection("customScripts", false)
+
 </body>
 </html>

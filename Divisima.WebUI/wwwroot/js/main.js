@@ -266,3 +266,17 @@ function getDistrict(cityID) {
 		}
 	});
 }
+
+function addCart(id, resim, miktar) {
+	$.ajax({
+		type: "Post",
+		url: "/urun/sepeteekle",
+		data: { "id": id, "picture": resim, "quantity": miktar },
+		success: function (data) {
+			alert(data)
+		},
+		error: function (err) {
+			alert(err.status)
+		}
+	});
+}

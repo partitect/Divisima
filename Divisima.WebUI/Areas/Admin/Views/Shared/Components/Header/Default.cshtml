@@ -1,0 +1,23 @@
+﻿<div class="ui top fixed icon menu borderless nav-menu">
+    <a class="toc item toggle-sidebar"><i class="icon large iconfont icon-ziyuan114"></i></a>
+    <div class="right menu">
+        <div class="item">
+            <input class="dark-toggle" id="toggle" type="checkbox" />
+        </div>
+        <div class="ui dropdown andi-dropdown item lang-dropdown">
+            English<i class="dropdown icon"></i>
+            <div class="menu">
+                <a class="item"><i class="united kingdom flag"></i>English</a><a class="item"><i class="turkey flag"></i>Turkish</a><a class="item"><i class="spain flag"></i>Spanish</a>
+            </div>
+        </div>
+        <div class="ui dropdown andi-dropdown item">
+            <img class="ui mini circular image navbar-img" src="/admin/img/people/1.jpg" alt="label-image" />
+            <div class="menu">
+                <a class="item" href="#">@User.Claims.FirstOrDefault(g => g.Type == ClaimTypes.Name).Value</a><a class="item" href="profile.html">Profile</a><a class="item" href="#">Settings</a>
+                <div class="ui divider"></div>
+                <a class="item">Need Help?</a><a class="item" asp-area="admin" asp-controller="Home" asp-action="Logout">Sign Out</a>
+            </div>
+        </div>
+        <a class="item toggle-right-sidebar"><i class="icon large iconfont icon-ziyuan59"></i></a>
+    </div>
+</div>

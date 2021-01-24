@@ -1,0 +1,85 @@
+﻿@model IEnumerable<Brand>
+@{ string sonuc = TempData["guncellemeBilgisi"] + ""; }
+<div class="ui grid stackable">
+    <div class="row">
+        <div class="column sixteen wide">
+            <div class="ui segment">
+                <h4>Markalar<a asp-controller="Brand" asp-action="Insert" class="andi-btn filled primary right floated">Yeni Kayıt</a></h4>
+                <div class="table-wrapper">
+                    <table class="andi-table ui selectable celled table">
+                        <thead>
+                            <tr>
+                                <th width="80%">Marka Adı</th>
+                                <th width="10%"></th>
+                                <th width="10%"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (Brand b in Model)
+                            {
+                <tr>
+                    <td>@b.Name</td>
+                    <td><a asp-controller="Brand" asp-action="Edit" asp-route-id="@b.ID" class="ui label teal">Düzenle</a></td>
+                    <td><a onclick="deleteWarning('@b.Name','/admin/brand/',@b.ID);" class="ui label red">Sil</a></td>
+                </tr>
+}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="ui modal modalUpdate">
+    <i class="close icon"></i>
+    <div class="header">
+        BİLGİLENDİRME...
+    </div>
+    <div class="image content">
+        <div class="description">
+            <div class="ui header">DİKKAT</div>
+            <p class="modalP">
+                @if (!string.IsNullOrEmpty(sonuc))
+                {
+    <span>@sonuc</span>
+                    @section customScripts{
+                        <script>
+                            $('.modalUpdate').modal('show');
+                        </script>
+                    }}
+            </p>
+        </div>
+    </div>
+    @*<div class="actions">
+            <div class="ui black deny button">
+                Nope
+            </div>
+            <div class="ui positive right labeled icon button">
+                Yep, that's me
+                <i class="checkmark icon"></i>
+            </div>
+        </div>*@
+</div>
+<div class="ui modal modalwarning">
+    <i class="close icon"></i>
+    <div class="header">
+        BİLGİLENDİRME...
+    </div>
+    <div class="image content">
+        <div class="description">
+            <div class="ui header">DİKKAT</div>
+            <p class="modalP">
+                <span></span> Silmek istediğinizden emin misiniz?
+            </p>
+        </div>
+    </div>
+    <div class="actions">
+        <div class="ui black deny button">
+            Hayır
+        </div>
+        <div class="ui positive right labeled icon button" onclick="deleteRecord()">
+            Evet
+            <i class="checkmark icon"></i>
+        </div>
+    </div>
+</div>

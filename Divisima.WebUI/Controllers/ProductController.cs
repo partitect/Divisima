@@ -2,8 +2,10 @@
 using Divisima.DAL.Entities;
 using Divisima.WebUI.Tools;
 using Divisima.WebUI.ViewModels;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -39,6 +41,41 @@ namespace Divisima.WebUI.Controllers
 		{
             return ginfoRepo.GetBy(g => g.Filter == filter).Detail;
 
+        }
+
+        [Route("/urun/sepeteekle")]
+        public string AddCart(int id, string picture, int quantity)
+        {
+            Product product = productRepo.GetBy(g => g.ID == id);
+            if (Request.Cookies["MyCart"] != null)
+            {
+                List<CartVM> cartVMs = JsonConvert.DeserializeObject<List<CartVM>>(Request.Cookies["MyCart"]);
+                if (!cartVMs.Any(a => a.ID == id))
+                {
+                    cartVMs.Add(new CartVM { ID = product.ID, Name = product.Name, Picture = picture, Price = product.Price, Quantity = quantity });
+                }
+                else
+                {
+                    foreach (CartVM cartVM in cartVMs)
+                    {
+                        if (cartVM.ID == id) cartVM.Quantity += quantity;
+                    }
+                }
+
+                CookieOptions cookieOptions = new CookieOptions();
+                cookieOptions.Expires = DateTime.Now.AddHours(3);
+                Response.Cookies.Append("MyCart", JsonConvert.SerializeObject(cartVMs), cookieOptions);
+
+            }
+            else
+            {
+                List<CartVM> cartVMs = new List<CartVM> { new CartVM { ID = product.ID, Name = product.Name, Picture = picture, Price = product.Price, Quantity = quantity } };
+
+                CookieOptions cookieOptions = new CookieOptions();
+                cookieOptions.Expires = DateTime.Now.AddHours(3);
+                Response.Cookies.Append("MyCart", JsonConvert.SerializeObject(cartVMs), cookieOptions);
+            }
+            return product.Name;
         }
     }
 }

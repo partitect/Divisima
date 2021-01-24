@@ -61,7 +61,7 @@ namespace Divisima.WebUI.Areas.Admin.Controllers
 				ClaimsIdentity claimsIdentity = new ClaimsIdentity("DivisimaAuthentitation");
 				claimsIdentity.AddClaim(new Claim(ClaimTypes.Email, model.EmailAddress));
 				claimsIdentity.AddClaim(new Claim(ClaimTypes.PrimarySid, model.ID.ToString()));
-				claimsIdentity.AddClaim(new Claim(ClaimTypes.Name, model.Name + " " + model.Surname));
+				claimsIdentity.AddClaim(new Claim(ClaimTypes.Name, admin.Name + " " + admin.Surname));
 
 				ClaimsPrincipal claimsPrincipal = new ClaimsPrincipal(claimsIdentity);
 
