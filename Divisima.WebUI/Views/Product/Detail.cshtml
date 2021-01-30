@@ -19,7 +19,7 @@
         <div class="row">
             <div class="col-lg-6">
                 <div class="product-pic-zoom">
-                    <img class="product-big-img" src="@(Model.Product.ProductPictures.Count!=0?Model.Product.ProductPictures.FirstOrDefault().Path:"/img/nopicture.jpg")" alt="@Model.Product.Name">
+                    <img class="product-big-img" src="@(Model.Product.ProductPictures.Count!=0?Model.Product.ProductPictures.FirstOrDefault().Path:"/img/nopicture.svg")" alt="@Model.Product.Name">
                 </div>
                 @if (Model.Product.ProductPictures.Count > 1)
                 {

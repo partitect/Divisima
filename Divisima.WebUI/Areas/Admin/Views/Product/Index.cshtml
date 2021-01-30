@@ -22,7 +22,7 @@
                             {
                             <tr>
                                 <td>@b.Name</td>
-                                <td> <img height="50" src="@(b.ProductPictures.Count != 0 ? b.ProductPictures.FirstOrDefault().Path : "/img/nopicture.jpg")" alt="@b.Name"></td>
+                                <td> <img height="50" src="@(b.ProductPictures.Count != 0 ? b.ProductPictures.FirstOrDefault().Path : "/img/nopicture.svg")" alt="@b.Name"></td>
                                 <td>@b.Brand.Name</td>
                                 <td>@string.Join(',', b.ProductCategories.Select(s => s.Category.Name))</td>
                                 <td><a asp-controller="Product" asp-action="Edit" asp-route-id="@b.ID" class="ui label teal">Düzenle</a></td>

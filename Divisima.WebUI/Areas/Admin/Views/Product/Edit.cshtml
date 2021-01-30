@@ -13,7 +13,7 @@
                                 <input asp-for="@Model.Product.ID" type="hidden" />
                             </div>
                             <div class="field">
-                                <img height="50" src="@(Model.productPictures.Count() != 0 ? Model.productPictures.FirstOrDefault().Path : "/img/nopicture.jpg")" alt="@Model.Product.Name">
+                                <img height="50" src="@(Model.productPictures.Count() != 0 ? Model.productPictures.FirstOrDefault().Path : "/img/nopicture.svg")" alt="@Model.Product.Name">
                             </div>
                             <div class="field">
                                 <label asp-for="@Model.Product.BrandID"></label>
