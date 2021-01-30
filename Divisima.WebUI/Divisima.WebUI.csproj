@@ -2,6 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UserSecretsId>7597c5be-567a-4501-b0df-17a22e2251b1</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>
@@ -307,10 +308,6 @@
   <ItemGroup>
     <ProjectReference Include="..\Divisima.BL\Divisima.BL.csproj" />
     <ProjectReference Include="..\Divisima.DAL\Divisima.DAL.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Areas\Admin\ViewModels\" />
   </ItemGroup>
 
 </Project>

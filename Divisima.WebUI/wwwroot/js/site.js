@@ -260,6 +260,9 @@ $(window).on('load', function () {
 	});
 
 
+	//Get Shopping Cart
+	getCartQuantity();
+
 
 })(jQuery);
 function getCareDetail(par) {
@@ -313,16 +316,40 @@ function getDistrict(cityID) {
 	});
 }
 
+function getCartQuantity() {
+	$.ajax({
+		type: "Get",
+		url: "/urun/sepetMiktar",
+		
+		success: function (data) {
+			$(".up-item span").text(data);
+		},
+		error: function (err) {
+			alert(err.status)
+		}
+	});
+}
+
 function addCart(id, resim, miktar) {
 	$.ajax({
 		type: "Post",
 		url: "/urun/sepeteekle",
 		data: { "id": id, "picture": resim, "quantity": miktar },
 		success: function (data) {
-			alert(data)
+			getCartQuantity();
+			$("#cartModal .modal-title").text("�r�n Sepete Eklendi");
+			$("#cartModal .modal-body").text('<strong>'+data+' �r�n� Sepette</strong>');
+			$("#cartModal").modal("show");
+			setTimeout(function () {
+				CartCloseModal()
+			}, 2000);
 		},
 		error: function (err) {
 			alert(err.status)
 		}
 	});
+}
+
+function CartCloseModal() {
+	$("#cartModal").modal("hide");
 }

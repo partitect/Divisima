@@ -1,3 +1,90 @@
-﻿
-<h1>Index</h1>
-
+﻿@model IEnumerable<Product>
+@{ string sonuc = TempData["guncellemeBilgisi"] + ""; }
+<div class="ui grid stackable">
+    <div class="row">
+        <div class="column sixteen wide">
+            <div class="ui segment">
+                <h4>Ürünlar<a asp-controller="Product" asp-action="Insert" class="andi-btn filled primary right floated">Yeni Kayıt</a></h4>
+                <div class="table-wrapper">
+                    <table class="andi-table ui selectable celled table">
+                        <thead>
+                            <tr>
+                                <th width="40%">Ürün Adı</th>
+                                <th width="10%">Resmi</th>
+                                <th width="10%">Markası</th>
+                                <th width="20%">Kategorileri</th>
+                                <th width="10%"></th>
+                                <th width="10%"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (Product b in Model)
+                            {
+                            <tr>
+                                <td>@b.Name</td>
+                                <td> <img height="50" src="@(b.ProductPictures.Count != 0 ? b.ProductPictures.FirstOrDefault().Path : "/img/nopicture.jpg")" alt="@b.Name"></td>
+                                <td>@b.Brand.Name</td>
+                                <td>@string.Join(',', b.ProductCategories.Select(s => s.Category.Name))</td>
+                                <td><a asp-controller="Product" asp-action="Edit" asp-route-id="@b.ID" class="ui label teal">Düzenle</a></td>
+                                <td><a onclick="deleteWarning('@b.Name','/admin/product/',@b.ID);" class="ui label red">Sil</a></td>
+                            </tr>}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="ui modal modalUpdate">
+    <i class="close icon"></i>
+    <div class="header">
+        BİLGİLENDİRME...
+    </div>
+    <div class="image content">
+        <div class="description">
+            <div class="ui header">DİKKAT</div>
+            <p class="modalP">
+                @if (!string.IsNullOrEmpty(sonuc))
+                {
+    <span>@sonuc</span>
+                    @section customScripts{
+                        <script>
+                            $('.modalUpdate').modal('show');
+                        </script>
+                    }}
+            </p>
+        </div>
+    </div>
+    @*<div class="actions">
+            <div class="ui black deny button">
+                Nope
+            </div>
+            <div class="ui positive right labeled icon button">
+                Yep, that's me
+                <i class="checkmark icon"></i>
+            </div>
+        </div>*@
+</div>
+<div class="ui modal modalwarning">
+    <i class="close icon"></i>
+    <div class="header">
+        BİLGİLENDİRME...
+    </div>
+    <div class="image content">
+        <div class="description">
+            <div class="ui header">DİKKAT</div>
+            <p class="modalP">
+                <span></span> Silmek istediğinizden emin misiniz?
+            </p>
+        </div>
+    </div>
+    <div class="actions">
+        <div class="ui black deny button">
+            Hayır
+        </div>
+        <div class="ui positive right labeled icon button" onclick="deleteRecord()">
+            Evet
+            <i class="checkmark icon"></i>
+        </div>
+    </div>
+</div>

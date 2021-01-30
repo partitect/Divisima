@@ -43,6 +43,21 @@ namespace Divisima.WebUI.Controllers
 
         }
 
+
+        [Route("/urun/sepetMiktar")]
+        public decimal CartQuantity()
+        {
+            if (Request.Cookies["MyCart"] != null)
+            {
+                List<CartVM> cartVMs = JsonConvert.DeserializeObject<List<CartVM>>(Request.Cookies["MyCart"]);
+                return cartVMs.Sum(s => s.Quantity);
+            }
+            else
+			{
+                return 0;
+			}
+
+        }
         [Route("/urun/sepeteekle")]
         public string AddCart(int id, string picture, int quantity)
         {
@@ -77,5 +92,22 @@ namespace Divisima.WebUI.Controllers
             }
             return product.Name;
         }
+
+
+        [Route("/sepetim")]
+        public IActionResult Cart()
+		{
+            if (Request.Cookies["MyCart"] != null)
+            {
+                List<CartVM> cartVMs = JsonConvert.DeserializeObject<List<CartVM>>(Request.Cookies["MyCart"]);
+                return View(cartVMs);
+            }
+            else
+            {
+                return Redirect("/");
+            }
+
+            
+		}
     }
 }

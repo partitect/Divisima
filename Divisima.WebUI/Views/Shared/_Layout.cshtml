@@ -26,12 +26,28 @@
         <div class="loader"></div>
     </div>
 
+    <!-- Modal -->
+    <div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel"></h5>
+                    <a class="btn-close" data-bs-dismiss="modal" aria-label="Close"></a>
+                </div>
+                <div class="modal-body">
+                    
+                </div>
+               
+            </div>
+        </div>
+    </div>
+
     @await Component.InvokeAsync(typeof(HeaderViewComponent))
     @RenderBody()
     @await Component.InvokeAsync(typeof(FooterViewComponent))
 
     <!--====== Javascripts & Jquery ======-->
-    <script src="~/js/site.min.js"></script>
+    <script src="~/js/site.min.js" charset="UTF-8"></script>
     @RenderSection("customScript", false)
 </body>
 </html>

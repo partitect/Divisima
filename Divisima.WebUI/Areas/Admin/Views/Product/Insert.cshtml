@@ -1,0 +1,41 @@
+﻿@model ProductVM
+<div class="basic-forms-content">
+    <div class="ui grid stackable equal width">
+        <div class="row">
+            <div class="column">
+                <div class="ui segment">
+                    <h4>Ürün Düzenle</h4>
+                    <form asp-controller="Product" asp-action="Insert" method="post" enctype="multipart/form-data">
+                        <div class="ui form andi-form">
+                            <div class="field">
+                                <label asp-for="@Model.Product.Name"></label>
+                                <input asp-for="@Model.Product.Name" />
+                            </div>
+                            <div class="field">
+                                <label asp-for="@Model.Product.BrandID"></label>
+                                <select asp-for="@Model.Product.BrandID" asp-items="@Model.Brands.Select(s=>new SelectListItem {Text=s.Name, Value=s.ID.ToString() })">
+                                    <option value="0">Bir Marka Belirtiniz</option>
+                                </select>
+
+                            </div>
+                            <div class="field">
+                                <label>Kategoriler"></label>
+                                <select asp-for="@Model.SelectedCategoryIDs" asp-items="@Model.Categories.Select(s=>new SelectListItem {Text=s.Name, Value=s.ID.ToString() })" multiple>
+                                    
+                                </select>
+
+                            </div>
+                            <div class="field">
+                                <label>Ürün Resmi"></label>
+                                <input type="file" name="ProductPicture" />
+                            </div>
+                            @Html.AntiForgeryToken()
+                            <button class="ui button" type="submit">Ekle</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

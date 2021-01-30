@@ -1,0 +1,33 @@
+﻿@model ProductVM
+<div class="basic-forms-content">
+    <div class="ui grid stackable equal width">
+        <div class="row">
+            <div class="column">
+                <div class="ui segment">
+                    <h4>Ürün Düzenle</h4>
+                    <form asp-controller="Product" asp-action="Edit" method="post">
+                        <div class="ui form andi-form">
+                            <div class="field">
+                                <label asp-for="@Model.Product.Name"></label>
+                                <input asp-for="@Model.Product.Name" />
+                                <input asp-for="@Model.Product.ID" type="hidden" />
+                            </div>
+                            <div class="field">
+                                <img height="50" src="@(Model.productPictures.Count() != 0 ? Model.productPictures.FirstOrDefault().Path : "/img/nopicture.jpg")" alt="@Model.Product.Name">
+                            </div>
+                            <div class="field">
+                                <label asp-for="@Model.Product.BrandID"></label>
+                                <select class="ui fluid search selection dropdown andi-dropdown" asp-for="@Model.Product.BrandID" asp-items="@Model.Brands.Select(s=>new SelectListItem {Text=s.Name, Value=s.ID.ToString() })">
+                                    <option value="0">Bir Marka Belirtiniz</option>
+                                </select>
+                            </div>
+                            @Html.AntiForgeryToken()
+                            <button class="ui button" type="submit">Güncelle</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
