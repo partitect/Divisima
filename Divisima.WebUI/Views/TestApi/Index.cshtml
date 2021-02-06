@@ -1,18 +1,30 @@
 ﻿<div class="urunler"></div>
-
+<div id="overlay">
+    <div class="cv-spinner">
+        <span class="spinner"></span>
+    </div>
+</div>
 @section customScript{
     <script>
+
+        $(document).ajaxSend(function () {
+            $("#overlay").fadeIn(300);
+        });
         $.ajax({
             type: "get",
-            url: "http://localhost:58717/api/urunler",
+            url: "http://localhost:58717/api/bayi/urunler",
             success: function (data) {
                 $.each(data, function (i, v) {
-                    $(".urunler").append('<h2>' + v.name + '<span>' + v.price + '</span></h2></hr>')
+                    $(".urunler").append('<h2>' + v.name + '<span style="color:red"> ' + v.price + ' TL</span></h2></hr>')
                 })
             },
             error: function (e) {
                 alert(e.responseText)
             }
-        })
+        }).done(function () {
+            setTimeout(function () {
+                $("#overlay").fadeOut(300);
+            }, 500);
+        });
     </script>
 }
