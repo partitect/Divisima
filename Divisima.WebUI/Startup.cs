@@ -1,5 +1,6 @@
 using Divisima.BL.Repositories;
 using Divisima.DAL.Entities.Contexts;
+using Divisima.WebUI.Middlewares;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -13,6 +14,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.Claims;
+using System.Text.Encodings.Web;
+using System.Text.Unicode;
 using System.Threading.Tasks;
 
 namespace Divisima.WebUI
@@ -40,6 +43,7 @@ namespace Divisima.WebUI
 				opt.LogoutPath = "/admin/logout";
 				opt.AccessDeniedPath = "/admin/login?access=denied";
 			});
+			services.AddSingleton(HtmlEncoder.Create(allowedRanges: new[] { UnicodeRanges.BasicLatin, UnicodeRanges.Latin1Supplement, UnicodeRanges.LatinExtendedA }));
 			services.Configure<IdentityOptions>(options => options.ClaimsIdentity.UserIdClaimType = ClaimTypes.Name);
 		}
 
@@ -104,7 +108,7 @@ namespace Divisima.WebUI
 			else app.UseStatusCodePagesWithReExecute("/hata", "?sCode={0}");
 
 			app.UseStaticFiles();
-			//app.UseTestMiddleware();
+			//app.UseSecurityMiddleware();
 			app.UseRouting();
 			app.UseAuthentication();
 			app.UseAuthorization();

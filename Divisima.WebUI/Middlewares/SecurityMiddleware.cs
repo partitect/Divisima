@@ -6,16 +6,16 @@ using System.Threading.Tasks;
 
 namespace Divisima.WebUI.Middlewares
 {
-    public class TestMiddleware
+    public class SecurityMiddleware
     {
         RequestDelegate next;
-        public TestMiddleware(RequestDelegate _next)
+        public SecurityMiddleware(RequestDelegate _next)
         {
             next = _next;
         }
         public async Task Invoke(HttpContext context)
         {
-            if (context.Request.Query["deneme"] == "test") context.Response.Redirect("/sepetim");
+            if (!context.User.Identity.IsAuthenticated) context.Response.Redirect("/login");
             else await next(context);
         }
     }

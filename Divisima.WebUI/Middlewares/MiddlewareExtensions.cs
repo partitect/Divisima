@@ -10,12 +10,11 @@ namespace Divisima.WebUI.Middlewares
     {
         public static IApplicationBuilder UseTestMiddleware(this IApplicationBuilder app)
         {
-            return app.UseMiddleware<TestMiddleWare>();
+            return app.UseMiddleware<TestMiddleware>();
         }
-        //public static IApplicationBuilder UseSecurityMiddleware(this IApplicationBuilder app)
-        //{
-        //    return app.UseMiddleware<SecurityMiddleware>();
-        //}
+        public static IApplicationBuilder UseSecurityMiddleware(this IApplicationBuilder app)
+        {
+            return app.UseMiddleware<SecurityMiddleware>();
+        }
     }
-
 }
