@@ -1,6 +1,9 @@
+using Divisima.BL.Repositories;
+using Divisima.DAL.Entities.Contexts;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -25,6 +28,18 @@ namespace Divisima.WepAPI
 		public void ConfigureServices(IServiceCollection services)
 		{
 			services.AddControllers();
+			services.AddCors(options =>
+			{
+				options.AddPolicy("CorsPolicy",
+					builder => builder
+						.AllowAnyMethod()
+						.AllowCredentials()
+						.SetIsOriginAllowed((host) => true)
+						.AllowAnyHeader());
+			});
+
+			services.AddDbContext<WebContext>(opt => opt.UseSqlServer(Configuration.GetConnectionString("WebCs")));
+			services.AddScoped(typeof(WebRepository<>));
 		}
 
 		// This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -36,6 +51,7 @@ namespace Divisima.WepAPI
 			}
 
 			app.UseRouting();
+			app.UseCors("CorsPolicy");
 
 			app.UseAuthorization();
 

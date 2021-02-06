@@ -46,11 +46,65 @@ namespace Divisima.WebUI
 		// This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
 		public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
 		{
+			//app.Run(async(context)=> {
+			//	if (context.Request.Path == "/kurumsal")
+			//	{
+			//		await context.Response.WriteAsync("Hello World");
+			//	}
+
+			//});
+
+			//app.Use(async (context, next) =>
+			//{
+			//	if (context.Request.Query["bilgi"] == "test")
+			//	{
+			//		context.Response.Redirect("/sepetim");
+			//	}
+			//	else
+			//	{
+			//		await next();
+			//	}
+			//});
+
+
+			//app.Use(async (context, next) =>
+			//{
+			//	if (context.Request.Query["bilgi"] == "test" && !context.User.Identity.IsAuthenticated)
+			//	{
+			//		context.Response.Redirect("/sepetim");
+			//	}
+			//	else
+			//	{
+			//		await next();
+			//	}
+			//});
+
+			//app.Use(async (context, next) =>
+			//{
+			//	if (context.Request.Query["bilgi"] == "test" && !context.User.Identity.IsAuthenticated && context.Request.Method == "POST")
+			//	{
+			//		context.Response.Redirect("/sepetim");
+			//	}
+			//	else
+			//	{
+			//		await next();
+			//	}
+			//});
+
+			//app.Map("/kurumsal", mapping => mapping.Use(async (context,next) => {
+			//	await context.Response.WriteAsync("Kurumsal Ýstendi");
+			//}));
+
+			//app.MapWhen(context => context.Request.IsHttps && context.Request.Host.Value.Contains(".com"), mapping => mapping.Use(async (context, next) =>
+			//{
+			//	context.Response.Redirect("https://teka.com");
+			//}));
+
 			if (env.IsDevelopment()) app.UseDeveloperExceptionPage();
 			else app.UseStatusCodePagesWithReExecute("/hata", "?sCode={0}");
 
 			app.UseStaticFiles();
-
+			//app.UseTestMiddleware();
 			app.UseRouting();
 			app.UseAuthentication();
 			app.UseAuthorization();

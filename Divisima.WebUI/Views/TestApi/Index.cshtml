@@ -1,0 +1,18 @@
+﻿<div class="urunler"></div>
+
+@section customScript{
+    <script>
+        $.ajax({
+            type: "get",
+            url: "http://localhost:58717/api/urunler",
+            success: function (data) {
+                $.each(data, function (i, v) {
+                    $(".urunler").append('<h2>' + v.name + '<span>' + v.price + '</span></h2></hr>')
+                })
+            },
+            error: function (e) {
+                alert(e.responseText)
+            }
+        })
+    </script>
+}
