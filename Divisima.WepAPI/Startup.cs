@@ -1,5 +1,8 @@
 using Divisima.BL.Repositories;
 using Divisima.DAL.Entities.Contexts;
+using Divisima.WebAPI.Helpers;
+using Divisima.WebAPI.Services;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -8,9 +11,11 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Microsoft.IdentityModel.Tokens;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 
 namespace Divisima.WepAPI
@@ -27,19 +32,48 @@ namespace Divisima.WepAPI
 		// This method gets called by the runtime. Use this method to add services to the container.
 		public void ConfigureServices(IServiceCollection services)
 		{
+			services.AddCors();
+			//For JSON
 			services.AddControllers();
-			services.AddCors(options =>
+			//For XML 
+			//services.AddControllers(opt=> opt.RespectBrowserAcceptHeader= true).AddXmlSerializerFormatters().AddXmlDataContractSerializerFormatters();
+			var appSettingsSection = Configuration.GetSection("AppSettings");
+			services.Configure<AppSettings>(appSettingsSection);
+
+			// JWT authentication Aayarlamasý
+			var appSettings = appSettingsSection.Get<AppSettings>();
+			var key = Encoding.ASCII.GetBytes(appSettings.Secret);
+			services.AddAuthentication(x =>
 			{
-				options.AddPolicy("CorsPolicy",
-					builder => builder
-						.AllowAnyMethod()
-						.AllowCredentials()
-						.SetIsOriginAllowed((host) => true)
-						.AllowAnyHeader());
+				x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+				x.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+			})
+			.AddJwtBearer(x =>
+			{
+				x.RequireHttpsMetadata = false;
+				x.SaveToken = true;
+				x.TokenValidationParameters = new TokenValidationParameters
+				{
+					ValidateIssuerSigningKey = true,
+					IssuerSigningKey = new SymmetricSecurityKey(key),
+					ValidateIssuer = false,
+					ValidateAudience = false
+				};
 			});
 
+			// Uygulama servisi için Dependecy Injection Ayarý
+			services.AddScoped<IUserService, UserService>();
 			services.AddDbContext<WebContext>(opt => opt.UseSqlServer(Configuration.GetConnectionString("WebCs")));
 			services.AddScoped(typeof(WebRepository<>));
+			services.AddSwaggerDocument(document => { 
+				document.PostProcess = (p=> {
+					p.Info.Version = "2.0";
+					p.Info.Title = "Karatekin Üniversitesi";
+					p.Info.Description = "Karatekin Üniversitesi Web Api";
+				});
+
+				
+			});
 		}
 
 		// This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -50,10 +84,21 @@ namespace Divisima.WepAPI
 				app.UseDeveloperExceptionPage();
 			}
 
-			app.UseRouting();
+			
 			app.UseCors("CorsPolicy");
+			app.UseOpenApi();
+			app.UseSwaggerUi3();
+			app.UseRouting();
 
+
+			app.UseCors(x => x
+				.AllowAnyOrigin()
+				.AllowAnyMethod()
+				.AllowAnyHeader());
+
+			app.UseAuthentication();
 			app.UseAuthorization();
+
 
 			app.UseEndpoints(endpoints =>
 			{

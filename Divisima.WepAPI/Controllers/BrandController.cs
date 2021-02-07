@@ -1,5 +1,6 @@
 ﻿using Divisima.BL.Repositories;
 using Divisima.DAL.Entities;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -10,6 +11,7 @@ using System.Threading.Tasks;
 
 namespace Divisima.WepAPI.Controllers
 {
+    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class BrandController : ControllerBase
@@ -23,7 +25,7 @@ namespace Divisima.WepAPI.Controllers
         [HttpGet]
         public IEnumerable<Brand> Getir()
         {
-            return brandRepo.GetAll();
+            return brandRepo.GetAll().OrderBy(o=> o.Name);
         }
 
         // GET api/<BrandController>/5
@@ -95,4 +97,17 @@ namespace Divisima.WepAPI.Controllers
             return rtn;
         }
     }
+
+    //[HttpGet]
+    //[Route("/markalar")]
+    //public IEnumerable<Brand> Getir(string sort, string filtre)
+    //{
+    //    if (!string.IsNullOrEmpty(sort))
+    //    {
+    //        var sortProperty = typeof(Brand).GetProperty(sort.Replace("desc_", ""));//desc_price
+    //        if (sort.IndexOf("desc_") != -1) return brandRepo.GetAll().AsEnumerable().OrderByDescending(o => sortProperty.GetValue(o));
+    //        else return brandRepo.GetAll().AsEnumerable().OrderBy(o => sortProperty.GetValue(o));
+    //    }
+    //}
+
 }

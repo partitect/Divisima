@@ -34,6 +34,11 @@ namespace Divisima.BL.Repositories
             return entities.Where(expression);
         }
 
+        public ICollection<TType> Get<TType>(Expression<Func<T, bool>> where, Expression<Func<T, TType>> select) where TType : class
+        {
+            return entities.Where(where).Select(select).ToList();
+        }
+
         public void Add(T entity)
         {
             db.Add(entity);

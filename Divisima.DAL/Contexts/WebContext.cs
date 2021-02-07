@@ -28,6 +28,7 @@ namespace Divisima.DAL.Entities.Contexts
 		public DbSet<GeneralInfo> GeneralInfos { get; set; }
 		public DbSet<City> City { get; set; }
 		public DbSet<District> District { get; set; }
+		public DbSet<User> User { get; set; }
 
 
 
